@@ -34,7 +34,7 @@ public class AttackMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(Attacker1)||DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame) 
+        if(Input.GetKeyDown(Attacker1) || DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame) 
         {
             Debug.Log("Attack1");
             Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
