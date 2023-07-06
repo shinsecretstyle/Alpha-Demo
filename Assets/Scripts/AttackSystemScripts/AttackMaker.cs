@@ -10,10 +10,6 @@ public class AttackMaker : MonoBehaviour
     public KeyCode Attacker3;
     public KeyCode Attacker4;
 
-    public KeyCode SpecialAttacker1;
-    public KeyCode SpecialAttacker2;
-    public KeyCode SpecialAttacker3;
-
     public GameObject AttackRange1;
     public Transform AttackRange1Point;
 
@@ -26,14 +22,6 @@ public class AttackMaker : MonoBehaviour
     public GameObject AttackRange4;
     public Transform AttackRange4Point;
 
-    public GameObject SpeciialAttacker1;
-    public Transform SpecialAttacker1Point;
-
-    public GameObject SpeciialAttacker2;
-    public Transform SpecialAttacker2Point;
-
-    public GameObject SpeciialAttacker3;
-    public GameObject SpecialAttacker3Point;
     //public float AttackTimes = 0.4f;
 
     //public float Timer;
@@ -46,7 +34,7 @@ public class AttackMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(Attacker1) || DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame) 
+        if(Input.GetKeyDown(Attacker1)||DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame) 
         {
             Debug.Log("Attack1");
             Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));

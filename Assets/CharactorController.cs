@@ -16,7 +16,6 @@ public class CharactorController : MonoBehaviour
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
-        theSR.sprite = AttackImage1;
     }
 
     // Update is called once per frame

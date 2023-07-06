@@ -7,12 +7,11 @@ using UnityEngine.UI;
 
 public class NoteObject : MonoBehaviour
 {
-    
+    //public int Score;
     private SpriteRenderer theSR;
-
     public Sprite DefaultImage;
     public Sprite PressedImage;
-    
+    //private Transform theTF;
     public bool canBePressed;
 
     public KeyCode keyToPress;
@@ -29,10 +28,10 @@ public class NoteObject : MonoBehaviour
     {
 
 
-        //While in the middle
+        //判定位置入る確認
         if (canBePressed)
         {
-            //Detect pressing
+            //合っているボタンを押すと実行する
             if (Input.GetKeyDown(keyToPress) || gamepadPressed())
             {
                 theSR.sprite = PressedImage;
@@ -56,16 +55,24 @@ public class NoteObject : MonoBehaviour
                 }
                 
 
-                //Kill the Object
+                //削除
                 Destroy(gameObject);
 
+
+
+                //合っているボタン離すと実行する
+                //if (Input.GetKeyUp(keyToPress))
+                //{
+
+                //    theSR.sprite = DefaultImage;
+                //}
             }
         }
 
         // }
     }
 
-    //If enter the collider
+    //判定位置イン
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Activator")
@@ -75,7 +82,7 @@ public class NoteObject : MonoBehaviour
 
     }
 
-    //If exit the collider
+    //判定位置アウト
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Activator")
@@ -89,21 +96,14 @@ public class NoteObject : MonoBehaviour
     private bool gamepadPressed()
     {
         bool isPressed = false;
-        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame //X Button
-
-            || DualSenseGamepadHID.current.circleButton.wasPressedThisFrame //O Button
-
-            || DualSenseGamepadHID.current.squareButton.wasPressedThisFrame //Square Button
-
-            || DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame //Triangle Button
-
-            || DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame //UP
-
-            || DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame //DOWN
-
-            || DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame //LEFT
-
-            || DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame) //Right
+        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
         {
             return true;
         }
