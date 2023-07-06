@@ -72,6 +72,11 @@ public class DogEnemy : MonoBehaviour
             CanMove = false;
             CanAttack = true;
         }
+
+        if (other.tag == "ICE")
+        {
+            Speed = 80;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -93,6 +98,11 @@ public class DogEnemy : MonoBehaviour
         {
             CanMove = true;
             CanAttack = false;
+        }
+
+        if (other.tag == "ICE")
+        {
+            Speed = 120;
         }
     }
 }

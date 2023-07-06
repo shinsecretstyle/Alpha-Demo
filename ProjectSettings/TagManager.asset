@@ -8,6 +8,7 @@ TagManager:
   - Start
   - Attack
   - Gate
+  - ICE
   layers:
   - Default
   - TransparentFX
