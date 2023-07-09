@@ -7,10 +7,13 @@ public class ColorChange : MonoBehaviour
 {
     private Renderer cubeRend;
     public KeyCode keyToPress;
+    public AudioClip sound1;
+    AudioSource SE;
     void Start()
     {
         cubeRend = GetComponent<Renderer>();
         cubeRend.material.color = new Color(1, 1, 1, 1); //”’
+        SE = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -18,6 +21,8 @@ public class ColorChange : MonoBehaviour
         if (Input.GetKeyDown(keyToPress) || gamepadPressed())
         {
             StartCoroutine("HitColor");
+            SE.PlayOneShot(sound1);
+
         }
     }
 
