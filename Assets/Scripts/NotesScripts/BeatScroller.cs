@@ -8,7 +8,7 @@ public class BeatScroller : MonoBehaviour
     public float beatFallSpeed;
     public bool isStarted;
 
-    public GameObject SmartNotesMaker;
+    private GameObject SmartNotesMaker;
 
     
     // Start is called before the first frame update
