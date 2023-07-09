@@ -49,17 +49,21 @@ public class NoteObject : MonoBehaviour
 
                 if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.1)
                 {
+                    //AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                     Scores.Point += 4;
                     Debug.Log("Perfect");
-
+                    
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
+                    //AudioSource.PlayClipAtPoint(Good, MainCamera.position);
                     Debug.Log("Good");
                     Scores.Point += 2;
+
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
+                    //AudioSource.PlayClipAtPoint(ok, MainCamera.position);
                     Debug.Log("ok");
                     Scores.Point += 1;
                 }
