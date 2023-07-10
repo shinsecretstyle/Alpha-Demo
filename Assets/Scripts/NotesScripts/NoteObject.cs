@@ -13,20 +13,28 @@ public class NoteObject : MonoBehaviour
     public Sprite PressedImage;
     //private Transform theTF;
     public bool canBePressed;
+    public bool Pressed;
 
     public KeyCode keyToPress;
 
+    private AudioSource NotesSE;
+    public AudioClip NotesAudioClip1;
 
+    Transform MainCamera;
     // Start is called before the first frame update
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
+
+        NotesSE = GetComponent<AudioSource>();
+
+        Pressed = false;
+        MainCamera = GameObject.Find("Main Camera").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-
 
         //判定位置入る確認
         if (canBePressed)
@@ -34,25 +42,32 @@ public class NoteObject : MonoBehaviour
             //合っているボタンを押すと実行する
             if (Input.GetKeyDown(keyToPress) || gamepadPressed())
             {
+
+                AudioSource.PlayClipAtPoint(NotesSE.clip,MainCamera.position);
                 theSR.sprite = PressedImage;
 
 
                 if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.1)
                 {
+                    //AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                     Scores.Point += 4;
                     Debug.Log("Perfect");
-
+                    
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
+                    //AudioSource.PlayClipAtPoint(Good, MainCamera.position);
                     Debug.Log("Good");
                     Scores.Point += 2;
+
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
+                    //AudioSource.PlayClipAtPoint(ok, MainCamera.position);
                     Debug.Log("ok");
                     Scores.Point += 1;
                 }
+                Pressed = true;
                 
 
                 //削除
@@ -88,7 +103,10 @@ public class NoteObject : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = false;
-            Scores.Point -= 1;
+            if (Pressed == false)
+            {
+                Scores.Point -= 1;
+            }
             Destroy(gameObject);
         }
     }
@@ -96,6 +114,7 @@ public class NoteObject : MonoBehaviour
     private bool gamepadPressed()
     {
         bool isPressed = false;
+        
         if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
             DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
             DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
@@ -105,7 +124,7 @@ public class NoteObject : MonoBehaviour
             DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
             DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
         {
-            return true;
+            isPressed = true;
         }
         return isPressed;
     }
