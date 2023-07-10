@@ -28,7 +28,7 @@ public class ColorChange : MonoBehaviour
 
     IEnumerator HitColor()
     {
-        cubeRend.material.color = new Color(0, 1, 1, 1); //çï
+        cubeRend.material.color = new Color(0, 1, 1, 1); //êÖêF
         yield return new WaitForSeconds(0.15f);
         cubeRend.material.color = new Color(1, 1, 1, 1); //îí
     }
