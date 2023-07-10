@@ -20,6 +20,10 @@ public class NoteObject : MonoBehaviour
     private AudioSource NotesSE;
     public AudioClip NotesAudioClip1;
 
+    public AudioClip Perfect;
+    public AudioClip Good;
+    public AudioClip OK;
+
     Transform MainCamera;
     // Start is called before the first frame update
     void Start()
@@ -40,30 +44,32 @@ public class NoteObject : MonoBehaviour
         if (canBePressed)
         {
             //合っているボタンを押すと実行する
-            if (Input.GetKeyDown(keyToPress) || gamepadPressed())
-            {
+            //
+            //if (Input.GetKeyDown(keyToPress) || gamepadPressed())
+              if (Input.GetKeyDown(keyToPress))//for keyboard only
+                {
 
-                AudioSource.PlayClipAtPoint(NotesSE.clip,MainCamera.position);
+                //AudioSource.PlayClipAtPoint(NotesAudioClip1,MainCamera.position);
                 theSR.sprite = PressedImage;
 
 
                 if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.1)
                 {
-                    //AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
+                    AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                     Scores.Point += 4;
                     Debug.Log("Perfect");
                     
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
-                    //AudioSource.PlayClipAtPoint(Good, MainCamera.position);
+                    AudioSource.PlayClipAtPoint(Good, MainCamera.position);
                     Debug.Log("Good");
                     Scores.Point += 2;
 
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
-                    //AudioSource.PlayClipAtPoint(ok, MainCamera.position);
+                    AudioSource.PlayClipAtPoint(OK, MainCamera.position);
                     Debug.Log("ok");
                     Scores.Point += 1;
                 }
@@ -75,12 +81,7 @@ public class NoteObject : MonoBehaviour
 
 
 
-                //合っているボタン離すと実行する
-                //if (Input.GetKeyUp(keyToPress))
-                //{
-
-                //    theSR.sprite = DefaultImage;
-                //}
+                
             }
         }
 
@@ -111,21 +112,21 @@ public class NoteObject : MonoBehaviour
         }
     }
 
-    private bool gamepadPressed()
-    {
-        bool isPressed = false;
+    //private bool gamepadPressed()
+    //{
+    //    bool isPressed = false;
         
-        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
-        {
-            isPressed = true;
-        }
-        return isPressed;
-    }
+    //    if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
+    //    {
+    //        isPressed = true;
+    //    }
+    //    return isPressed;
+    //}
 }

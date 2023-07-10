@@ -135,8 +135,12 @@ MonoBehaviour:
   DefaultImage: {fileID: 21300000, guid: dd242334e1cedf3478264c06ee202f9f, type: 3}
   PressedImage: {fileID: 21300000, guid: 3b3c868c29e47504a9084aa7db006042, type: 3}
   canBePressed: 0
+  Pressed: 0
   keyToPress: 100
   NotesAudioClip1: {fileID: 8300000, guid: 0bb6271dd023baf418d6ff9a7e3770e3, type: 3}
+  Perfect: {fileID: 8300000, guid: abcb9ed7d2f5b3c4b8a339ad0c67c9ef, type: 3}
+  Good: {fileID: 8300000, guid: ccf941ee15f73c74a89c09155b54b99f, type: 3}
+  OK: {fileID: 8300000, guid: 9c8ac30b745c3cb45bc2c1c8d6d0f166, type: 3}
 --- !u!114 &1710438987754786147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +156,6 @@ MonoBehaviour:
   textJSON: {fileID: 4900000, guid: 1c217166d3a93e04a8698c0321c8bb51, type: 3}
   beatFallSpeed: 0
   isStarted: 0
-  SmartNotesMaker: {fileID: 0}
 --- !u!82 &-5163604809843786637
 AudioSource:
   m_ObjectHideFlags: 0
