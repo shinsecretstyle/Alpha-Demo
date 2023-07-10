@@ -16,26 +16,26 @@ public class SystemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPaused != true)
-        {
-            if (DualSenseGamepadHID.current.optionsButton.isPressed)
-            {
+        //if (isPaused != true)
+        //{
+        //    if (DualSenseGamepadHID.current.optionsButton.isPressed)
+        //    {
 
-                Time.timeScale = 0;
-                isPaused = true;
-                Debug.Log("Paused");
-            }
-        }
-        if (isPaused == true)
-        {
-            if (DualSenseGamepadHID.current.circleButton.isPressed)
-            {
+        //        Time.timeScale = 0;
+        //        isPaused = true;
+        //        Debug.Log("Paused");
+        //    }
+        //}
+        //if (isPaused == true)
+        //{
+        //    if (DualSenseGamepadHID.current.circleButton.isPressed)
+        //    {
 
-                Time.timeScale = 1;
-                isPaused = false;
-                Debug.Log("continue");
-            }
-        }
+        //        Time.timeScale = 1;
+        //        isPaused = false;
+        //        Debug.Log("continue");
+        //    }
+        //}
 
     }
 }
