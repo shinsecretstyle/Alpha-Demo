@@ -22,15 +22,21 @@ public class MKnightEnemy : MonoBehaviour
     public Sprite AttackedImage;
 
     private SpriteRenderer theSR;
+
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = 7;
-        Speed = 60;
+        Speed = 260;
         CanMove = true;
         CanAttack = false;
+
+        animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -46,6 +52,12 @@ public class MKnightEnemy : MonoBehaviour
         if (HP < 1)
         {
             Destroy(gameObject);
+        }
+
+        if (CanAttack)
+        {
+            animator.Play("Attack");
+            
         }
     }
 

@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a28ea5c4b031e47bc0e221394e5736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy1: {fileID: 5948590326282430301, guid: f2cbede0abc92eb44b8543258e3c2412, type: 3}
+  Enemy1: {fileID: 3341170327586628994, guid: 9de1e6c425237644a8e8caba272241a2, type: 3}
   Enemy2: {fileID: 997700363058835476, guid: cdff2b9ad79c1eb4d917061d58fd9d71, type: 3}
   Enemy3: {fileID: 5698494090492132497, guid: 7c3ec26d3db44054fb9848c5bc3a1ffd, type: 3}
   Enemy4: {fileID: 0}
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376667396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b8f030b2b093b04785bcd0d41e0e924, type: 3}
   m_Name: 
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797306631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c281be05660a7844b0be2c85b073a07, type: 3}
   m_Name: 
@@ -2337,7 +2337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66dffa396efe54248a3a63e25bbdc49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: 0
+  keyToPress1: 97
+  keyToPress2: 115
+  keyToPress3: 100
+  keyToPress4: 102
   sound1: {fileID: 8300000, guid: 0bb6271dd023baf418d6ff9a7e3770e3, type: 3}
 --- !u!82 &2139024571
 AudioSource:
