@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,11 @@ public class MKnightEnemy : MonoBehaviour
 
     private SpriteRenderer theSR;
 
-    Animator animator;
+    Animator theAnim;
 
+    public float AttackCD;
+
+    public bool AttackCDisOk;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +39,9 @@ public class MKnightEnemy : MonoBehaviour
         CanMove = true;
         CanAttack = false;
 
-        animator = GetComponent<Animator>();
+        AttackCD = 1f;
+        AttackCDisOk = true;
+        theAnim = GetComponent<Animator>();
         
     }
 
@@ -56,8 +62,20 @@ public class MKnightEnemy : MonoBehaviour
 
         if (CanAttack)
         {
-            animator.Play("Attack");
-            
+            if (AttackCDisOk)
+            {
+                theAnim.Play("Attack",0,0.0f);
+                AttackCDisOk = false;
+            }
+            if (AttackCDisOk == false)
+            {
+                AttackCD -= Time.deltaTime;
+            }
+            if (AttackCD < 0)
+            {
+                AttackCDisOk = true;
+                AttackCD = 1f;
+            }
         }
     }
 

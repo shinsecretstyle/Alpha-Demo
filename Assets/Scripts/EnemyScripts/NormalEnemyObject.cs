@@ -22,6 +22,12 @@ public class NormalEnemyObject : MonoBehaviour
     public Sprite AttackedImage;
 
     private SpriteRenderer theSR;
+
+    Animator theAnim;
+
+    public float AttackCD;
+
+    public bool AttackCDisOk;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +37,10 @@ public class NormalEnemyObject : MonoBehaviour
         Speed = 80;
         CanMove = true;
         CanAttack = false;
+        AttackCD = 1f;
+        AttackCDisOk = true;
+
+        theAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,6 +56,24 @@ public class NormalEnemyObject : MonoBehaviour
         if (HP <1 ) {
             Destroy(gameObject);
             Scores.Point += 15;
+        }
+
+        if (CanAttack)
+        {
+            if (AttackCDisOk)
+            {
+                theAnim.Play("Attack", 0, 0.0f);
+                AttackCDisOk = false;
+            }
+            if (AttackCDisOk == false)
+            {
+                AttackCD -= Time.deltaTime;
+            }
+            if (AttackCD < 0)
+            {
+                AttackCDisOk = true;
+                AttackCD = 1f;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
