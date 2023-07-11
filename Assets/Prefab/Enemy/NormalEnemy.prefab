@@ -150,8 +150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.65, y: -1.74}
-  m_SizeDelta: {x: 4, y: 4}
+  m_AnchoredPosition: {x: 0.9477, y: 0.6594}
+  m_SizeDelta: {x: 1.9752, y: 1.7444}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3004950356663922242
 Canvas:
@@ -251,8 +251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.12, y: 0.622}
-  m_SizeDelta: {x: 40, y: 5}
+  m_AnchoredPosition: {x: -0.036, y: 0.735}
+  m_SizeDelta: {x: 100, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7920946238843165711
 MonoBehaviour:
@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 5948590326282430300}
   - component: {fileID: 5948590326282430303}
   - component: {fileID: 5948590326282430273}
+  - component: {fileID: 8279740079637409367}
   m_Layer: 0
   m_Name: NormalEnemy
   m_TagString: Untagged
@@ -412,7 +413,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 388373ea29cda444aa6307e84834eb90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 890eef5e0e7501346b395be472551140, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -436,9 +437,30 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08656911, y: 0.02936227}
-  m_Size: {x: 1.8088913, y: 2.2890186}
+  m_Offset: {x: 1.5, y: 0}
+  m_Size: {x: 3, y: 5}
   m_Direction: 0
+--- !u!95 &8279740079637409367
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5948590326282430301}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13f9e107788fc4947b95517977d7800c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6950170946446739779
 GameObject:
   m_ObjectHideFlags: 0
