@@ -45,8 +45,8 @@ public class NoteObject : MonoBehaviour
         {
             //çáÇ¡ÇƒÇ¢ÇÈÉ{É^ÉìÇâüÇ∑Ç∆é¿çsÇ∑ÇÈ
             //
-            //if (Input.GetKeyDown(keyToPress) || gamepadPressed())
-              if (Input.GetKeyDown(keyToPress))//for keyboard only
+            if (Input.GetKeyDown(keyToPress) || gamepadPressed())
+            //  if (Input.GetKeyDown(keyToPress))//for keyboard only
                 {
 
                 //AudioSource.PlayClipAtPoint(NotesAudioClip1,MainCamera.position);
@@ -112,21 +112,21 @@ public class NoteObject : MonoBehaviour
         }
     }
 
-    //private bool gamepadPressed()
-    //{
-    //    bool isPressed = false;
-        
-    //    if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
-    //        DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
-    //    {
-    //        isPressed = true;
-    //    }
-    //    return isPressed;
-    //}
+    private bool gamepadPressed()
+    {
+        bool isPressed = false;
+
+        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
+            DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
+        {
+            isPressed = true;
+        }
+        return isPressed;
+    }
 }

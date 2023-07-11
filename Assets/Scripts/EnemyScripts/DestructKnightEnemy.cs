@@ -37,7 +37,7 @@ public class DestructKnightEnemy : MonoBehaviour
         Speed = 40;
         CanMove = true;
         CanAttack = false;
-        AttackCD = 1f;
+        AttackCD = 3f;
         AttackCDisOk = true;
 
         theAnim = GetComponent<Animator>();
@@ -64,6 +64,7 @@ public class DestructKnightEnemy : MonoBehaviour
             {
                 theAnim.Play("Attack", 0, 0.0f);
                 AttackCDisOk = false;
+                Gate.HP -= 5;
             }
             if (AttackCDisOk == false)
             {

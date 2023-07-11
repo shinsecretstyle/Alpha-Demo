@@ -39,7 +39,7 @@ public class MKnightEnemy : MonoBehaviour
         CanMove = true;
         CanAttack = false;
 
-        AttackCD = 1f;
+        AttackCD = 2f;
         AttackCDisOk = true;
         theAnim = GetComponent<Animator>();
         
@@ -65,7 +65,9 @@ public class MKnightEnemy : MonoBehaviour
             if (AttackCDisOk)
             {
                 theAnim.Play("Attack",0,0.0f);
+                
                 AttackCDisOk = false;
+                Gate.HP-=2;
             }
             if (AttackCDisOk == false)
             {

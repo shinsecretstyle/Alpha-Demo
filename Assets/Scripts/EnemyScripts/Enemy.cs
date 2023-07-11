@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     public Slider HpSlider;
 
-    private int MaxHp;
+    public int MaxHp;
 
     public bool CanMove;
 

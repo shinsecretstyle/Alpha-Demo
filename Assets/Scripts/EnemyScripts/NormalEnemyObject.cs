@@ -64,6 +64,7 @@ public class NormalEnemyObject : MonoBehaviour
             {
                 theAnim.Play("Attack", 0, 0.0f);
                 AttackCDisOk = false;
+                Gate.HP -= 1;
             }
             if (AttackCDisOk == false)
             {
