@@ -34,6 +34,11 @@ public class MKnightEnemy : MonoBehaviour
     public float AttackCD;
 
     public bool AttackCDisOk;
+
+    private AudioSource theSE;
+    Transform MainCamera;
+
+    public AudioClip AttackSE1;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,17 +46,20 @@ public class MKnightEnemy : MonoBehaviour
         HpSlider.value = 1;
         HP = 7;
         ATK = 2;
-        Speed = 460;
+        Speed = 60;
         CanMove = true;
         CanAttack = false;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
         CanAttackGate = false;
 
-        AttackCD = 2f;
+        AttackCD = 3f;
         AttackCDisOk = true;
         theAnim = GetComponent<Animator>();
         
+        theSE = GetComponent<AudioSource>();
+
+        MainCamera = GameObject.Find("Main Camera").transform;
     }
 
     // Update is called once per frame
@@ -73,27 +81,28 @@ public class MKnightEnemy : MonoBehaviour
         {
             if (AttackCDisOk)
             {
-                
-                
-                AttackCDisOk = false;
 
-                if (CanAttackGate)
+                theAnim.Play("Attack", 0, 0.0f);
+                AudioSource.PlayClipAtPoint(AttackSE1, MainCamera.position);
+                AttackCDisOk = false;
+                if (theAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
                 {
-                    theAnim.Play("Attack", 0, 0.0f);
-                    Gate.HP -= ATK;
-                }
-                else if (CanAttackFence1) 
-                {
-                    theAnim.Play("Attack", 0, 0.0f);
-                    //if (theAnim.GetCurrentAnimatorStateInfo(1).IsName("Attack")){
-                    //    Debug.Log("aaaaaaa");
-                    //}
-                    Fence1.HP -= ATK;
-                }
-                else if (CanAttackFence2)
-                {
-                    theAnim.Play("Attack", 0, 0.0f);
-                    Fence2.HP -= ATK;
+                    if (CanAttackGate)
+                    {
+                        
+                        Gate.HP -= ATK;
+                        
+                    }
+                    else if (CanAttackFence1)
+                    {
+                        
+                        Fence1.HP -= ATK;
+                    }
+                    else if (CanAttackFence2)
+                    {
+                        
+                        Fence2.HP -= ATK;
+                    }
                 }
             }
             if (AttackCDisOk == false)
@@ -103,7 +112,7 @@ public class MKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 2f;
+                AttackCD = 3f;
             }
         }
     }
@@ -159,12 +168,16 @@ public class MKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
+            AttackCD = 3f;
+            AttackCDisOk = true;
         }
         if (other.tag == "Fence2")
         {
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
+            AttackCD = 3f;
+            AttackCDisOk = true;
         }
     }
 }

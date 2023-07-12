@@ -15,6 +15,8 @@ public class Fence2 : MonoBehaviour
     public Sprite Image3;
 
     private SpriteRenderer theSR;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class Fence2 : MonoBehaviour
         HP = 7;
         theSR = GetComponent<SpriteRenderer>();
         theSR.sprite = Image1;
+
     }
 
     // Update is called once per frame
@@ -36,6 +39,9 @@ public class Fence2 : MonoBehaviour
         if (HpSlider.value == 0)
         {
             theSR.sprite = Image3;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
+            
         }
     }
 }

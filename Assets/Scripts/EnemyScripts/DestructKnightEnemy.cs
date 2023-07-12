@@ -13,9 +13,13 @@ public class DestructKnightEnemy : MonoBehaviour
 
     private int MaxHp = 8;
 
+    public int ATK;
     public bool CanMove;
 
     public bool CanAttack;
+    public bool CanAttackFence1;
+    public bool CanAttackFence2;
+    public bool CanAttackGate;
 
     public Sprite DefaultImage;
 
@@ -28,6 +32,10 @@ public class DestructKnightEnemy : MonoBehaviour
     public float AttackCD;
 
     public bool AttackCDisOk;
+    private AudioSource theSE;
+    Transform MainCamera;
+
+    public AudioClip AttackSE1;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +43,20 @@ public class DestructKnightEnemy : MonoBehaviour
         HpSlider.value = 1;
         HP = 8;
         Speed = 40;
+        ATK = 5;
         CanMove = true;
         CanAttack = false;
-        AttackCD = 3f;
+        AttackCD = 4f;
         AttackCDisOk = true;
+        CanAttackFence1 = false;
+        CanAttackFence2 = false;
+        CanAttackGate = false;
 
         theAnim = GetComponent<Animator>();
+
+        theSE = GetComponent<AudioSource>();
+
+        MainCamera = GameObject.Find("Main Camera").transform;
     }
 
     // Update is called once per frame
@@ -62,9 +78,29 @@ public class DestructKnightEnemy : MonoBehaviour
         {
             if (AttackCDisOk)
             {
+
                 theAnim.Play("Attack", 0, 0.0f);
+                AudioSource.PlayClipAtPoint(AttackSE1, MainCamera.position);
                 AttackCDisOk = false;
-                Gate.HP -= 5;
+                if (theAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
+                {
+                    if (CanAttackGate)
+                    {
+
+                        Gate.HP -= ATK;
+
+                    }
+                    else if (CanAttackFence1)
+                    {
+
+                        Fence1.HP -= ATK;
+                    }
+                    else if (CanAttackFence2)
+                    {
+
+                        Fence2.HP -= ATK;
+                    }
+                }
             }
             if (AttackCDisOk == false)
             {
@@ -73,7 +109,7 @@ public class DestructKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 3f;
+                AttackCD = 4f;
             }
         }
     }
@@ -87,16 +123,24 @@ public class DestructKnightEnemy : MonoBehaviour
             theSR.sprite = AttackedImage;
         }
 
-        if (other.tag == "Wall")
-        {
-            CanMove = false;
-            CanAttack = true;
-        }
-
         if (other.tag == "Gate")
         {
-            CanMove = false;
             CanAttack = true;
+            CanMove = false;
+            CanAttackGate = true;
+        }
+
+        if (other.tag == "Fence1")
+        {
+            CanAttack = true;
+            CanMove = false;
+            CanAttackFence1 = true;
+        }
+        if (other.tag == "Fence2")
+        {
+            CanAttack = true;
+            CanMove = false;
+            CanAttackFence2 = true;
         }
     }
 
@@ -109,16 +153,28 @@ public class DestructKnightEnemy : MonoBehaviour
             theSR.sprite = DefaultImage;
         }
 
-        if (other.tag == "Wall")
-        {
-            CanMove = true;
-            CanAttack = false;
-        }
-
         if (other.tag == "Gate")
         {
-            CanMove = true;
             CanAttack = false;
+            CanMove = true;
+            CanAttackGate = false;
+        }
+
+        if (other.tag == "Fence1")
+        {
+            CanAttack = false;
+            CanMove = true;
+            CanAttackFence1 = false;
+            AttackCD = 3f;
+            AttackCDisOk = true;
+        }
+        if (other.tag == "Fence2")
+        {
+            CanAttack = false;
+            CanMove = true;
+            CanAttackFence2 = false;
+            AttackCD = 3f;
+            AttackCDisOk = true;
         }
     }
 }
