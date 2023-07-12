@@ -9,6 +9,8 @@ TagManager:
   - Attack
   - Gate
   - ICE
+  - Fence1
+  - Fence2
   layers:
   - Default
   - TransparentFX

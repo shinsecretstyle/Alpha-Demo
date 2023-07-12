@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 528175351}
   m_Layer: 0
   m_Name: fence1
-  m_TagString: Untagged
+  m_TagString: Fence1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1590,9 +1590,11 @@ GameObject:
   - component: {fileID: 1144548857}
   - component: {fileID: 1144548856}
   - component: {fileID: 1144548858}
+  - component: {fileID: 1144548860}
+  - component: {fileID: 1144548861}
   m_Layer: 0
   m_Name: fence2
-  m_TagString: Untagged
+  m_TagString: Fence2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1681,6 +1683,49 @@ MonoBehaviour:
   Image1: {fileID: 21300000, guid: 00683fccd61459b4c90444bf3eabc4ee, type: 3}
   Image2: {fileID: 21300000, guid: 3fd106601de519e449a68740f88ce84f, type: 3}
   Image3: {fileID: 21300000, guid: eecf9a24d92133c419b5c28a2ab740d1, type: 3}
+--- !u!50 &1144548860
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144548855}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!68 &1144548861
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144548855}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.51088077, y: -1.6010789}
+  - {x: 0.35593754, y: 0.7488919}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1161939224
 GameObject:
   m_ObjectHideFlags: 0

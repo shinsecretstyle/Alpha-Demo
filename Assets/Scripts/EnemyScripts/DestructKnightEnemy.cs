@@ -73,7 +73,7 @@ public class DestructKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 1f;
+                AttackCD = 3f;
             }
         }
     }

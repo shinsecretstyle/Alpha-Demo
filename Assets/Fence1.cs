@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fence : MonoBehaviour
+public class Fence1 : MonoBehaviour
 {
     public Slider HpSlider;
 
-     int MaxHP;
+    int MaxHP;
     public static int HP;
 
     public Sprite Image1;

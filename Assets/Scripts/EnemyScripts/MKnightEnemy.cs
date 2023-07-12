@@ -10,6 +10,8 @@ public class MKnightEnemy : MonoBehaviour
 
     public int Speed;
 
+    public int ATK;
+
     public Slider HpSlider;
 
     private int MaxHp = 7;
@@ -17,6 +19,9 @@ public class MKnightEnemy : MonoBehaviour
     public bool CanMove;
 
     public bool CanAttack;
+    public bool CanAttackFence1;
+    public bool CanAttackFence2;
+    public bool CanAttackGate;
 
     public Sprite DefaultImage;
 
@@ -35,9 +40,13 @@ public class MKnightEnemy : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = 7;
+        ATK = 2;
         Speed = 460;
         CanMove = true;
         CanAttack = false;
+        CanAttackFence1 = false;
+        CanAttackFence2 = false;
+        CanAttackGate = false;
 
         AttackCD = 2f;
         AttackCDisOk = true;
@@ -64,11 +73,28 @@ public class MKnightEnemy : MonoBehaviour
         {
             if (AttackCDisOk)
             {
-                theAnim.Play("Attack",0,0.0f);
+                
                 
                 AttackCDisOk = false;
-                Gate.HP-=2;
-                Fence.HP-=2;
+
+                if (CanAttackGate)
+                {
+                    theAnim.Play("Attack", 0, 0.0f);
+                    Gate.HP -= ATK;
+                }
+                else if (CanAttackFence1) 
+                {
+                    theAnim.Play("Attack", 0, 0.0f);
+                    //if (theAnim.GetCurrentAnimatorStateInfo(1).IsName("Attack")){
+                    //    Debug.Log("aaaaaaa");
+                    //}
+                    Fence1.HP -= ATK;
+                }
+                else if (CanAttackFence2)
+                {
+                    theAnim.Play("Attack", 0, 0.0f);
+                    Fence2.HP -= ATK;
+                }
             }
             if (AttackCDisOk == false)
             {
@@ -77,7 +103,7 @@ public class MKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 1f;
+                AttackCD = 2f;
             }
         }
     }
@@ -91,16 +117,24 @@ public class MKnightEnemy : MonoBehaviour
             theSR.sprite = AttackedImage;
         }
 
-        if (other.tag == "Wall")
-        {
-            CanMove = false;
-            CanAttack = true;
-        }
-
         if (other.tag == "Gate")
         {
-            CanMove = false;
             CanAttack = true;
+            CanMove = false;
+            CanAttackGate = true;
+        }
+
+        if (other.tag == "Fence1")
+        {
+            CanAttack = true;
+            CanMove = false;
+            CanAttackFence1 = true;
+        }
+        if (other.tag == "Fence2")
+        {
+            CanAttack = true;
+            CanMove = false;
+            CanAttackFence2 = true;
         }
     }
 
@@ -113,16 +147,24 @@ public class MKnightEnemy : MonoBehaviour
             theSR.sprite = DefaultImage;
         }
 
-        if (other.tag == "Wall")
-        {
-            CanMove = true;
-            CanAttack = false;
-        }
-
         if (other.tag == "Gate")
         {
-            CanMove = true;
             CanAttack = false;
+            CanMove = true;
+            CanAttackGate = false;
+        }
+
+        if (other.tag == "Fence1")
+        {
+            CanAttack = false;
+            CanMove = true;
+            CanAttackFence1 = false;
+        }
+        if (other.tag == "Fence2")
+        {
+            CanAttack = false;
+            CanMove = true;
+            CanAttackFence2 = false;
         }
     }
 }
