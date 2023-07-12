@@ -26,6 +26,6 @@ public class Gate : MonoBehaviour
     void Update()
     {
         HpSlider.value = (float)HP / (float)MaxHP;
-        h= HP;
+        h = HP;
     }
 }

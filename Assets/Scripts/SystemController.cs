@@ -5,6 +5,8 @@ using UnityEngine.InputSystem.DualShock;
 
 public class SystemController : MonoBehaviour
 {
+    public Transform point1;
+    public Transform point2;
 
     public bool isPaused;
     // Start is called before the first frame update
