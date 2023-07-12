@@ -36,9 +36,9 @@ public class ColorChange : MonoBehaviour
 
     IEnumerator HitColor()
     {
-        cubeRend.material.color = new Color(0, 1, 1, 1); //êÖêF
+        cubeRend.material.color = new Color(255, 255, 255, 1); //white
         yield return new WaitForSeconds(0.15f);
-        cubeRend.material.color = new Color(1, 1, 1, 1); //îí
+        cubeRend.material.color = new Color(1, 1, 1, 1); //ÅhÅf
     }
     private bool gamepadPressed()
     {
