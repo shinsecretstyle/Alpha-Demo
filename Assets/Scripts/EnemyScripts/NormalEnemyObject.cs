@@ -38,8 +38,8 @@ public class NormalEnemyObject : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = 3;
-        Speed = 80;
-        ATK = 1;
+        Speed = 90;
+        ATK = 2;
         CanMove = true;
         CanAttack = false;
         AttackCD = 2f;

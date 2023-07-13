@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.DualShock;
 
-public class CharactorController : MonoBehaviour
+public class Queen : MonoBehaviour
 {
     public Sprite AttackImage1;
     public Sprite AttackImage2;
     public Sprite AttackImage3;
     public Sprite AttackImage4;
 
-    private int id;
+    public static int id;
     private SpriteRenderer theSR;
     // Start is called before the first frame update
     void Start()
@@ -22,12 +22,12 @@ public class CharactorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame
-            || DualSenseGamepadHID.current.leftTrigger.wasPressedThisFrame
-            || DualSenseGamepadHID.current.rightShoulder.wasPressedThisFrame
-            || DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame) {
-            id++;
-        }
+        //if (DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame
+        //    || DualSenseGamepadHID.current.leftTrigger.wasPressedThisFrame
+        //    || DualSenseGamepadHID.current.rightShoulder.wasPressedThisFrame
+        //    || DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame) {
+        //    id++;
+        //}
         if (id % 3 == 1)
         {
             theSR.sprite = AttackImage1;

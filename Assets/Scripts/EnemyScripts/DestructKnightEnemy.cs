@@ -42,8 +42,8 @@ public class DestructKnightEnemy : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = 8;
-        Speed = 40;
-        ATK = 5;
+        Speed = 60;
+        ATK = 8;
         CanMove = true;
         CanAttack = false;
         AttackCD = 4f;

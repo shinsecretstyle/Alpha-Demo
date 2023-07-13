@@ -45,8 +45,8 @@ public class MKnightEnemy : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = 7;
-        ATK = 2;
-        Speed = 60;
+        ATK = 3;
+        Speed = 70;
         CanMove = true;
         CanAttack = false;
         CanAttackFence1 = false;

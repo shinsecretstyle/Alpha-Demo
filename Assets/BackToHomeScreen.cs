@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.DualShock;
 using UnityEngine.SceneManagement;
 
 public class BackToHomeScreen : MonoBehaviour
@@ -15,8 +14,12 @@ public class BackToHomeScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame) {
-            SceneManager.LoadScene("Title");
-        }
+        //if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame) {
+        //    SceneManager.LoadScene("Title");
+        //}
+    }
+    private void OnBackToHome()
+    {
+        SceneManager.LoadScene("Title");
     }
 }

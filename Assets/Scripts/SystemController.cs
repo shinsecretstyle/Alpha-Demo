@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.DualShock;
 using UnityEngine.SceneManagement;
 
 public class SystemController : MonoBehaviour
@@ -20,29 +19,29 @@ public class SystemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPaused != true)
-        {
-            if (DualSenseGamepadHID.current.optionsButton.isPressed)
-            {
-                SceneManager.LoadScene("SmartNoteMaker");
-                Scores.Point = 0;
-                //time.timescale = 0;
-                //ispaused = true;
-                //debug.log("paused");
+        //if (isPaused != true)
+        //{
+        //    if (DualSenseGamepadHID.current.optionsButton.isPressed)
+        //    {
+        //        SceneManager.LoadScene("SmartNoteMaker");
+        //        Scores.Point = 0;
+        //        //time.timescale = 0;
+        //        //ispaused = true;
+        //        //debug.log("paused");
 
 
-            }
-        }
-        if (isPaused == true)
-        {
-            if (DualSenseGamepadHID.current.circleButton.isPressed)
-            {
+        //    }
+        //}
+        //if (isPaused == true)
+        //{
+        //    if (DualSenseGamepadHID.current.circleButton.isPressed)
+        //    {
 
-                Time.timeScale = 1;
-                isPaused = false;
-                Debug.Log("continue");
-            }
-        }
+        //        Time.timeScale = 1;
+        //        isPaused = false;
+        //        Debug.Log("continue");
+        //    }
+        //}
 
     }
 }

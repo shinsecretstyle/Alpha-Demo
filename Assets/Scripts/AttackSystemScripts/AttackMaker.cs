@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.DualShock;
 
 public class AttackMaker : MonoBehaviour
 {
@@ -37,6 +36,8 @@ public class AttackMaker : MonoBehaviour
     public AudioClip Range3SE;
     public AudioClip Range4SE;
 
+    private Gamepad gamepad;
+    private bool HasGamepad;
     //public float AttackTimes = 0.4f;
 
     //public float Timer;
@@ -46,66 +47,75 @@ public class AttackMaker : MonoBehaviour
         theAS = GetComponent<AudioSource>();
 
         MainCamera = GameObject.Find("Main Camera").transform;
+
+        if (Gamepad.current != null)
+        {
+            HasGamepad = true;
+            Debug.Log("connected");
+        }
     }
 
+    private void OnAttackRange1()
+    {
+        AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
+        Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        Queen.id++;
+        if (HasGamepad)
+        {
+            StartCoroutine(Vibration(0.1f, 0));
+        }
+    }
+    private void OnAttackRange2()
+    {
+        AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
+        Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        Queen.id++;
+        if (HasGamepad)
+        {
+            StartCoroutine(Vibration(0.3f, 0.2f));
+        }
+    }
+    private void OnAttackRange3()
+    {
+        AudioSource.PlayClipAtPoint(Range3SE, MainCamera.position);
+        Instantiate(AttackRange3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        Queen.id++;
+        if (HasGamepad)
+        {
+            StartCoroutine(Vibration(0.6f, 0.4f));
+        }
+    }
+    private void OnAttackRange4()
+    {
+        AudioSource.PlayClipAtPoint(Range4SE, MainCamera.position);
+        Instantiate(AttackRange4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        Queen.id++;
+        if (HasGamepad)
+        {
+            StartCoroutine(Vibration(1.2f, 0.7f));
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(Attacker1)||DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame) 
+        if (Gamepad.current != null)
         {
-            //Debug.Log("Attack1");
-            AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
-            Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            StartCoroutine(Vibration(0.1f, 0));
-        }
-        if(Input.GetKeyDown(Attacker2) || DualSenseGamepadHID.current.leftTrigger.wasPressedThisFrame) 
-        {
-            //Debug.Log("Attack2");
-            AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
-            Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            StartCoroutine(Vibration(0.3f, 0.2f));
-        }
-        
-        if(Input.GetKeyDown(Attacker3) || DualSenseGamepadHID.current.rightShoulder.wasPressedThisFrame) 
-        {
-            //Debug.Log("Attack3");
-            AudioSource.PlayClipAtPoint(Range3SE, MainCamera.position);
-            Instantiate(AttackRange3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            StartCoroutine(Vibration(0.6f, 0.4f));
+            HasGamepad = true;
+            
         }
 
-        if (Input.GetKeyDown(Attacker4) || DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame)
-        {
-            //Debug.Log("Attack4");
-            AudioSource.PlayClipAtPoint(Range4SE, MainCamera.position);
-            Instantiate(AttackRange4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            StartCoroutine(Vibration(1.2f, 0.7f));
-        }
-
-        if (DualSenseGamepadHID.current.leftStickButton.wasPressedThisFrame)
-        {
-            //Debug.Log("Special Skill1");
-            //Instantiate(SpecialAttack,SpecialAttackPoint.position, new Quaternion(0f, 0f, 0f, 0f));
-            //StartCoroutine(Vibration(1.2f, 0.7f));
-        }
-
-        if (DualSenseGamepadHID.current.rightStickButton.wasPressedThisFrame)
-        {
-            //Debug.Log("Special Skill2");
-            //Instantiate(SpecialAttack2, SpecialAttackPoint2.position, new Quaternion(0f, 0f, 0f, 0f));
-            //StartCoroutine(Vibration(1.2f, 0.7f));
-        }
     }
 
-    private static IEnumerator Vibration
+    private IEnumerator Vibration
         (
         float lowFrequency,
         float highFrequency
         )
     {
-        var gamepad = DualSenseGamepadHID.current;
-        gamepad.SetMotorSpeeds( lowFrequency, highFrequency );
-        yield return new WaitForSeconds( 0.05f );
-        gamepad.SetMotorSpeeds( 0, 0 );
+        gamepad = Gamepad.current;
+        gamepad.SetMotorSpeeds(lowFrequency, highFrequency);
+        yield return new WaitForSeconds(0.05f);
+        gamepad.SetMotorSpeeds(0, 0);
     }
+
 }

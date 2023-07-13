@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.DualShock;
 
 public class HK : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class HK : MonoBehaviour
     void Update()
     {
         CD -= Time.deltaTime;
-        if (CD < 0 && gamepadPressed())
+        if (CD < 0 && OnNotesKey())
         {
             if (result % 3 == 1)
             {
@@ -68,21 +67,25 @@ public class HK : MonoBehaviour
         //    theSR.sprite = AttackImage4;
         //}
     }
-    private bool gamepadPressed()
-    {
-        bool isPressed = false;
+    //private bool gamepadPressed()
+    //{
+    //    bool isPressed = false;
 
-        if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
-            DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
-        {
-            isPressed = true;
-        }
-        return isPressed;
+    //    if (DualSenseGamepadHID.current.crossButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.circleButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.squareButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.triangleButton.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.up.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.down.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.right.wasPressedThisFrame ||
+    //        DualSenseGamepadHID.current.dpad.left.wasPressedThisFrame)
+    //    {
+    //        isPressed = true;
+    //    }
+    //    return isPressed;
+    //}
+    private bool OnNotesKey()
+    {
+        return true;
     }
 }
