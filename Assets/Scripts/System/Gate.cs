@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Gate : MonoBehaviour
@@ -27,5 +28,10 @@ public class Gate : MonoBehaviour
     {
         HpSlider.value = (float)HP / (float)MaxHP;
         h = HP;
+
+        if (HP < 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

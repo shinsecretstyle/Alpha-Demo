@@ -3483,6 +3483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
+  MainCamera: {fileID: 0}
   Music1: {fileID: 8300000, guid: 5a2ad7df191a0d647aae627fa3f21342, type: 3}
 --- !u!1 &1735326112
 GameObject:

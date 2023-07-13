@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SmartNotesMaker : MonoBehaviour
 {
@@ -147,6 +148,9 @@ public class SmartNotesMaker : MonoBehaviour
         {
             GameObject.Find("EnemyMaker").SetActive(false);
             gaming = false;
+            if (Gate.HP > 0) {
+                SceneManager.LoadScene("GameClear");
+            }
         }
 
     }
