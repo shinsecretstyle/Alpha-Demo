@@ -76,6 +76,8 @@ public class SmartNotesMaker : MonoBehaviour
     public NotesList myNotesList = new NotesList();
 
     private bool gaming;
+
+    public float waitForQuit;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,8 @@ public class SmartNotesMaker : MonoBehaviour
         totalTime = myNotesList.MusicTotalTime + (RightspawnPoint.position.x-0) / (myNotesList.beatFallSpeed/60f);
         
         gaming = true;
+
+        waitForQuit = 7f;
     }
     // Update is called once per frame
     void Update()
@@ -148,8 +152,24 @@ public class SmartNotesMaker : MonoBehaviour
         {
             GameObject.Find("EnemyMaker").SetActive(false);
             gaming = false;
-            if (Gate.HP > 0) {
-                SceneManager.LoadScene("GameClear");
+            //waitForQuit -= Time.deltaTime;
+            //if (waitForQuit < 0)
+            //{
+            //    if (Gate.HP > 0)
+            //    {
+            //        SceneManager.LoadScene("GameClear");
+            //    }
+            //}
+        }
+        if(gaming == false)
+        {
+            waitForQuit -= Time.deltaTime;
+            if (waitForQuit < 0)
+            {
+                if (Gate.HP > 0)
+                {
+                    SceneManager.LoadScene("GameClear");
+                }
             }
         }
 
