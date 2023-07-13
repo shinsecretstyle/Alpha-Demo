@@ -759,7 +759,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47e8fbb32f48c3545ba948b95cd48e2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 621145faeb8d2004089d0089a5da76b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -778,8 +778,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376667396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.209999, y: 1.0900002, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -8.209999, y: 1.72, z: -5}
+  m_LocalScale: {x: 0.57, y: 0.57, z: 0.57}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -797,9 +797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8f030b2b093b04785bcd0d41e0e924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackImage1: {fileID: 21300000, guid: 0674402b1cb9a774caafff87a35e3712, type: 3}
-  AttackImage2: {fileID: 21300000, guid: e40fff5453be09c4c8c5d4bf306b064e, type: 3}
-  AttackImage3: {fileID: 21300000, guid: 47e8fbb32f48c3545ba948b95cd48e2b, type: 3}
+  AttackImage1: {fileID: 21300000, guid: 621145faeb8d2004089d0089a5da76b6, type: 3}
+  AttackImage2: {fileID: 21300000, guid: df9c5575dd0fcb948af20416b16d79cb, type: 3}
+  AttackImage3: {fileID: 21300000, guid: 9c24b045fa2d9684bac2779916fd97d3, type: 3}
   AttackImage4: {fileID: 21300000, guid: 9d8d2456d9163d940a4e74f09d6a2a7b, type: 3}
 --- !u!1 &463965105
 GameObject:
@@ -3564,8 +3564,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735326112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 1.25, z: -5}
-  m_LocalScale: {x: 0.48, y: 0.48, z: 0.48}
+  m_LocalPosition: {x: 8.91, y: 1.64, z: -5}
+  m_LocalScale: {x: 0.57, y: 0.57, z: 0.57}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

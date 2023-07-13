@@ -17,7 +17,7 @@ public class CharactorController : MonoBehaviour
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
-        id = 1;
+        id = 3;
     }
 
     // Update is called once per frame
@@ -29,21 +29,19 @@ public class CharactorController : MonoBehaviour
             || DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame) {
             id++;
         }
-        if (id % 4 == 1)
+        if (id % 3 == 1)
         {
             theSR.sprite = AttackImage1;
         }
-        else if (id % 4 == 2)
+        else if (id % 3 == 2)
         {
             theSR.sprite = AttackImage2;
         }
-        else if (id % 4 == 3)
+        else if (id % 3 == 0)
         {
             theSR.sprite = AttackImage3;
         }
-        else if ((id % 4) == 0) {
-            theSR.sprite = AttackImage4;
-        }
+        
         //if (DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame)
         //{
             
