@@ -57,21 +57,23 @@ public class NoteObject : MonoBehaviour
                 {
                     AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                     Scores.Point += 4;
-                    Debug.Log("Perfect");
-                    
+                    //Debug.Log("Perfect");
+                    HK.result += 1;
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
                     AudioSource.PlayClipAtPoint(Good, MainCamera.position);
-                    Debug.Log("Good");
+                    //Debug.Log("Good");
                     Scores.Point += 2;
-
+                    HK.result += 1;
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
                     AudioSource.PlayClipAtPoint(OK, MainCamera.position);
-                    Debug.Log("ok");
+                    //Debug.Log("ok");
                     Scores.Point += 1;
+
+                    HK.result += 1;
                 }
                 Pressed = true;
                 
@@ -107,6 +109,7 @@ public class NoteObject : MonoBehaviour
             if (Pressed == false)
             {
                 Scores.Point -= 1;
+                HK.result = 0;
             }
             Destroy(gameObject);
         }

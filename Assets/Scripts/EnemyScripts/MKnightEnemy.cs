@@ -67,7 +67,9 @@ public class MKnightEnemy : MonoBehaviour
     {
         if (CanMove)
         {
+
             transform.position -= new Vector3(Speed * Time.deltaTime / 60f, 0f, 0f);
+
         }
 
         HpSlider.value = (float)HP / (float)MaxHp;
@@ -89,7 +91,7 @@ public class MKnightEnemy : MonoBehaviour
                 {
                     if (CanAttackGate)
                     {
-                        
+
                         Gate.HP -= ATK;
                         
                     }
