@@ -11,6 +11,10 @@ TagManager:
   - ICE
   - Fence1
   - Fence2
+  - AttackRange1
+  - AttackRange2
+  - AttackRange3
+  - AttackRange4
   layers:
   - Default
   - TransparentFX

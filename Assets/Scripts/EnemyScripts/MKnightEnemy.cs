@@ -14,7 +14,7 @@ public class MKnightEnemy : MonoBehaviour
 
     public Slider HpSlider;
 
-    private int MaxHp = 7;
+    private int MaxHp = AllEnemy.MKnightEnemyMaxHP;
 
     public bool CanMove;
 
@@ -44,17 +44,17 @@ public class MKnightEnemy : MonoBehaviour
     {
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
-        HP = 7;
-        ATK = 3;
-        Speed = 70;
+        HP = MaxHp;
+        ATK = AllEnemy.MKnightEnemyATK;
         CanMove = true;
         CanAttack = false;
+        Speed = AllEnemy.MKnightEnemySpeed;
+        AttackCD = AllEnemy.MKnightEnemyCD;
+        AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
         CanAttackGate = false;
 
-        AttackCD = 3f;
-        AttackCDisOk = true;
         theAnim = GetComponent<Animator>();
         
         theSE = GetComponent<AudioSource>();
@@ -122,9 +122,24 @@ public class MKnightEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.tag == "Attack")
+        if (other.tag == "AttackRange1")
         {
-            HP--;
+            HP -= Attack.AttackRange1;
+            theSR.sprite = AttackedImage;
+        }
+        if (other.tag == "AttackRange2")
+        {
+            HP -= Attack.AttackRange2;
+            theSR.sprite = AttackedImage;
+        }
+        if (other.tag == "AttackRange3")
+        {
+            HP -= Attack.AttackRange3;
+            theSR.sprite = AttackedImage;
+        }
+        if (other.tag == "AttackRange4")
+        {
+            HP -= Attack.AttackRange4;
             theSR.sprite = AttackedImage;
         }
 
@@ -152,7 +167,22 @@ public class MKnightEnemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.tag == "Attack")
+        if (other.tag == "AttackRange1")
+        {
+
+            theSR.sprite = DefaultImage;
+        }
+        if (other.tag == "AttackRange2")
+        {
+
+            theSR.sprite = DefaultImage;
+        }
+        if (other.tag == "AttackRange3")
+        {
+
+            theSR.sprite = DefaultImage;
+        }
+        if (other.tag == "AttackRange4")
         {
 
             theSR.sprite = DefaultImage;

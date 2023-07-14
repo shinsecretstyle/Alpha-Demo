@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackRange11
       objectReference: {fileID: 0}
+    - target: {fileID: 6533516063067262135, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
+      propertyPath: m_TagString
+      value: AttackRange1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
 --- !u!4 &1662764379819654275 stripped

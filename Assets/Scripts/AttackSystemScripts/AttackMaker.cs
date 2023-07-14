@@ -38,6 +38,7 @@ public class AttackMaker : MonoBehaviour
 
     private Gamepad gamepad;
     private bool HasGamepad;
+    private float AttackCD;
     //public float AttackTimes = 0.4f;
 
     //public float Timer;
@@ -53,6 +54,7 @@ public class AttackMaker : MonoBehaviour
             HasGamepad = true;
             Debug.Log("connected");
         }
+        AttackCD = 0.5f;
     }
 
     private void OnAttackRange1()
@@ -117,5 +119,8 @@ public class AttackMaker : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         gamepad.SetMotorSpeeds(0, 0);
     }
-
+    private void ResetCD()
+    {
+        AttackCD = 0.5f;
+    }
 }

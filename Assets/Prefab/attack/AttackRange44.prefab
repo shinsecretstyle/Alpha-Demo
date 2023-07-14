@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackRange44
       objectReference: {fileID: 0}
+    - target: {fileID: 3169123067172536030, guid: d71e5e611a46d6749b8cb72c27bc4393, type: 3}
+      propertyPath: m_TagString
+      value: AttackRange4
+      objectReference: {fileID: 0}
     - target: {fileID: 5089041938257368613, guid: d71e5e611a46d6749b8cb72c27bc4393, type: 3}
       propertyPath: m_RootOrder
       value: 0
