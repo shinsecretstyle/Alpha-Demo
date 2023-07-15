@@ -2034,6 +2034,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e411867c-6f50-4835-b460-7fee042ec4d1",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "NextPage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1215f0f5-d0c3-4918-aae8-f7686ce82689",
                     "path": "<Keyboard>/x",
                     "interactions": "",
