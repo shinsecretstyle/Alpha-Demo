@@ -38,6 +38,8 @@ public class AttackMaker : MonoBehaviour
 
     private Gamepad gamepad;
     private bool HasGamepad;
+
+    private bool canAttack;
     private float AttackCD;
     //public float AttackTimes = 0.4f;
 
@@ -54,47 +56,65 @@ public class AttackMaker : MonoBehaviour
             HasGamepad = true;
             Debug.Log("connected");
         }
-        AttackCD = 0.5f;
+        AttackCD = -1;
+        canAttack = true;
     }
 
     private void OnAttackRange1()
     {
-        AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
-        Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
-        Queen.id++;
-        if (HasGamepad)
+        if (canAttack)
         {
-            StartCoroutine(Vibration(0.1f, 0));
+            ResetCD();
+            AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
+            Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            Queen.id++;
+            if (HasGamepad)
+            {
+                StartCoroutine(Vibration(0.1f, 0));
+            }
         }
+
     }
     private void OnAttackRange2()
     {
-        AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
-        Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
-        Queen.id++;
-        if (HasGamepad)
+        if (canAttack)
         {
-            StartCoroutine(Vibration(0.3f, 0.2f));
+            ResetCD();
+            AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
+            Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            Queen.id++;
+            if (HasGamepad)
+            {
+                StartCoroutine(Vibration(0.3f, 0.2f));
+            }
         }
     }
     private void OnAttackRange3()
     {
-        AudioSource.PlayClipAtPoint(Range3SE, MainCamera.position);
-        Instantiate(AttackRange3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-        Queen.id++;
-        if (HasGamepad)
+        if (canAttack)
         {
-            StartCoroutine(Vibration(0.6f, 0.4f));
+            ResetCD();
+            AudioSource.PlayClipAtPoint(Range3SE, MainCamera.position);
+            Instantiate(AttackRange3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            Queen.id++;
+            if (HasGamepad)
+            {
+                StartCoroutine(Vibration(0.6f, 0.4f));
+            }
         }
     }
     private void OnAttackRange4()
     {
-        AudioSource.PlayClipAtPoint(Range4SE, MainCamera.position);
-        Instantiate(AttackRange4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
-        Queen.id++;
-        if (HasGamepad)
+        if (canAttack)
         {
-            StartCoroutine(Vibration(1.2f, 0.7f));
+            ResetCD();
+            AudioSource.PlayClipAtPoint(Range4SE, MainCamera.position);
+            Instantiate(AttackRange4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            Queen.id++;
+            if (HasGamepad)
+            {
+                StartCoroutine(Vibration(1.2f, 0.7f));
+            }
         }
     }
     // Update is called once per frame
@@ -104,6 +124,14 @@ public class AttackMaker : MonoBehaviour
         {
             HasGamepad = true;
             
+        }
+        AttackCD -= Time.deltaTime;
+        if (AttackCD < 0)
+        {
+            canAttack = true;
+        }
+        else if (AttackCD > 0) { 
+            canAttack = false;
         }
 
     }
@@ -121,6 +149,6 @@ public class AttackMaker : MonoBehaviour
     }
     private void ResetCD()
     {
-        AttackCD = 0.5f;
+        AttackCD = 0f;
     }
 }

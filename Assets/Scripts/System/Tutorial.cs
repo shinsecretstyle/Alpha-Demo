@@ -13,26 +13,33 @@ public class Tutorial : MonoBehaviour
     public Sprite Image5;
     public Sprite Image6;
 
+    private float timer;
     private SpriteRenderer theSR;
     // Start is called before the first frame update
     void Start()
     {
-        id = 1; 
+        id = 1;
+        timer = 600f;
         theSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(id == 1) 
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            SceneManager.LoadScene("Title");
+        }
+        if (id == 1)
         {
             theSR.sprite = Image1;
         }
-        if(id == 2)
+        if (id == 2)
         {
             theSR.sprite = Image2;
         }
-        if(id == 3)
+        if (id == 3)
         {
             theSR.sprite = Image3;
         }
@@ -48,7 +55,7 @@ public class Tutorial : MonoBehaviour
         {
             theSR.sprite = Image6;
         }
-        if(id == 7)
+        if (id == 7)
         {
             SceneManager.LoadScene("Game");
         }
@@ -58,7 +65,8 @@ public class Tutorial : MonoBehaviour
     {
         id++;
     }
-    private void OnSkip() {
+    private void OnSkip()
+    {
         SceneManager.LoadScene("Game");
     }
 }
