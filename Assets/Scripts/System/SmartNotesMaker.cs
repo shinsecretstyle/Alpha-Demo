@@ -152,14 +152,7 @@ public class SmartNotesMaker : MonoBehaviour
         {
             GameObject.Find("EnemyMaker").SetActive(false);
             gaming = false;
-            //waitForQuit -= Time.deltaTime;
-            //if (waitForQuit < 0)
-            //{
-            //    if (Gate.HP > 0)
-            //    {
-            //        SceneManager.LoadScene("GameClear");
-            //    }
-            //}
+            
         }
         if(gaming == false)
         {

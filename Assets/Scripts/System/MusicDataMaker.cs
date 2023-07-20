@@ -35,12 +35,14 @@ public class MusicDataMaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         myNotesList.notes = new Notes[350];
+
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         PassingTime += Time.deltaTime;
         if (Input.GetKeyDown(KC))
         {
@@ -52,7 +54,7 @@ public class MusicDataMaker : MonoBehaviour
             myNotesList.notes[id].type = UnityEngine.Random.Range(1, 5);
 
             myNotesList.notes[id].hasSpawned = false;
-
+            
             if (UnityEngine.Random.Range(0, 3) > 1)
             {
                 myNotesList.notes[id].NotesPosition = "Left";
@@ -68,6 +70,7 @@ public class MusicDataMaker : MonoBehaviour
         }
         if (Input.GetKeyDown(save))
         {
+
             Array.Resize(ref myNotesList.notes,id);
             myNotesList.totalNotes = id;
             string jsondata = JsonUtility.ToJson(myNotesList);
@@ -75,6 +78,7 @@ public class MusicDataMaker : MonoBehaviour
 
             using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\"+"musicX.txt");
             writer.Write(jsondata);
+
         }
 
     }

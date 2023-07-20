@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MKnightEnemy : MonoBehaviour
 {
     public int HP;
-
+    
     public int Speed;
 
     public int ATK;

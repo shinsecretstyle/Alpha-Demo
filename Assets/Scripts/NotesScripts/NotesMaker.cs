@@ -31,19 +31,16 @@ public class NotesMaker : MonoBehaviour
         {
             i++;
             time = time - 2f;
-            //Debug.Log("time" + i + "passed");
+            
 
             if (i < counts)
             {
-                //if (((DateTime.Now-StartedTime)) % 1f == 0)
-                //{
+               
 
                 i++;
                 Instantiate(NotesA, new Vector3(i * -1.0f - 5f, 0, 0), Quaternion.identity);
 
-                //Debug.Log(Time.realtimeSinceStartup);
-                //Debug.Log(StartedTime);
-                //}
+                
             }
         }
     }

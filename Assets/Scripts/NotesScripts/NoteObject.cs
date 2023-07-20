@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class NoteObject : MonoBehaviour
 {
-    //public int Score;
+    
     private SpriteRenderer theSR;
     public Sprite DefaultImage;
     public Sprite PressedImage;
-    //private Transform theTF;
+    
     public bool canBePressed;
     public bool Pressed;
 
@@ -49,8 +49,8 @@ public class NoteObject : MonoBehaviour
 
         if (canBePressed)
         {
-            //AudioSource.PlayClipAtPoint(NotesAudioClip1,MainCamera.position);
-            theSR.sprite = PressedImage;
+            
+            //theSR.sprite = PressedImage;
 
 
             if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.1)
@@ -78,13 +78,13 @@ public class NoteObject : MonoBehaviour
             Pressed = true;
 
 
-            //削除
+            
             Destroy(gameObject);
 
         }
     }
 
-    //判定位置イン
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Activator")
@@ -94,7 +94,7 @@ public class NoteObject : MonoBehaviour
 
     }
 
-    //判定位置アウト
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Activator")

@@ -22,12 +22,7 @@ public class Queen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame
-        //    || DualSenseGamepadHID.current.leftTrigger.wasPressedThisFrame
-        //    || DualSenseGamepadHID.current.rightShoulder.wasPressedThisFrame
-        //    || DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame) {
-        //    id++;
-        //}
+        
         if (id % 3 == 1)
         {
             theSR.sprite = AttackImage1;
@@ -40,25 +35,5 @@ public class Queen : MonoBehaviour
         {
             theSR.sprite = AttackImage3;
         }
-        
-        //if (DualSenseGamepadHID.current.leftShoulder.wasPressedThisFrame)
-        //{
-            
-        //    theSR.sprite = AttackImage1;
-        //}
-        //if (DualSenseGamepadHID.current.leftTrigger.wasPressedThisFrame)
-        //{
-        //    theSR.sprite = AttackImage2;
-        //}
-
-        //if (DualSenseGamepadHID.current.rightShoulder.wasPressedThisFrame)
-        //{
-        //    theSR.sprite = AttackImage3;
-        //}
-
-        //if (DualSenseGamepadHID.current.rightTrigger.wasPressedThisFrame)
-        //{
-        //    theSR.sprite = AttackImage4;
-        //}
     }
 }
