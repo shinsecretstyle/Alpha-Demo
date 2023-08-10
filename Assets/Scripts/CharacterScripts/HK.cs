@@ -19,14 +19,14 @@ public class HK : MonoBehaviour
     {
         result = 1;
         theSR = GetComponent<SpriteRenderer>();
-        //id = 1;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         CD -= Time.deltaTime;
-        if (CD < 0 && OnNotesKey())
+        if (CD < 0 && OnNotesKey() && GameMode.Mode != "AttackOnly")
         {
             if (result % 3 == 1)
             {
@@ -40,6 +40,25 @@ public class HK : MonoBehaviour
             {
                 theSR.sprite = Image3;
             }
+            CD = 2f;
+        }
+        if (CD < 0 && (GameMode.Mode == "AttackOnly"))
+        {
+            if (result % 3 == 1)
+            {
+                theSR.sprite = Image1;
+            }
+            else if (result % 3 == 2)
+            {
+                theSR.sprite = Image2;
+                
+            }
+            else if (result % 3 == 0 && result != 0)
+            {
+                theSR.sprite = Image3;
+            }
+            
+            
             CD = 2f;
         }
         if (result == 0)
