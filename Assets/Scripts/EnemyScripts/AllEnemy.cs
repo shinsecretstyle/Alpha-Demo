@@ -23,5 +23,22 @@ public class AllEnemy : MonoBehaviour
     public static int DestructKnightEnemyATK = 8;
     public static float DestructKnightEnemyCD = 4f;
 
+    //DogEnemy Setting
+    public static int DogEnemyMaxHP = 8;
+    public static int DogEnemySpeed = 120;
+    public static int DogEnemyATK = 1;
+    public static float DogEnemyCD = 1f;
 
+    //HeavyKnightEnemy Setting
+    public static int HeavyKnightEnemyMaxHP = 50;
+    public static int HeavyKnightEnemySpeed = 60;
+    public static int HeavyKnightEnemyATK = 10;
+    public static float HeavyKnightEnemyCD = 4f;
+
+
+    //BossEnemy Setting
+    public static int BossEnemyMaxHP = 150;
+    public static int BossEnemySpeed = 40;
+    public static int BossEnemyATK = 15;
+    public static float BossEnemyCD = 5f;
 }

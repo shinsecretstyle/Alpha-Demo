@@ -23,7 +23,6 @@ public class DestructKnightEnemy : MonoBehaviour
     public bool CanAttackGate;
 
     public Sprite DefaultImage;
-
     public Sprite AttackedImage;
 
     private SpriteRenderer theSR;
@@ -80,6 +79,7 @@ public class DestructKnightEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         if (Fence1CanAttack) {
             Fence1CD -= Time.deltaTime;
             if (Fence1CD < 0)
@@ -133,7 +133,7 @@ public class DestructKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 4f;
+                AttackCD = AllEnemy.DestructKnightEnemyCD;
             }
         }
     }
@@ -165,7 +165,7 @@ public class DestructKnightEnemy : MonoBehaviour
         if (other.tag == "TotalAttack")
         {
             HP -= (Attack.AttackRange4)/2;
-            //theSR.sprite = AttackedImage;
+            theSR.sprite = AttackedImage;
             
         }
 
@@ -228,7 +228,7 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
-            AttackCD = 3f;
+            AttackCD = AllEnemy.DestructKnightEnemyCD;
             AttackCDisOk = true;
             Fence1CanAttack = false;
 
@@ -238,7 +238,7 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
-            AttackCD = 3f;
+            AttackCD = AllEnemy.DestructKnightEnemyCD;
             AttackCDisOk = true;
             Fence2CanAttack = false;
         }

@@ -45,9 +45,7 @@ public class AttackMaker : MonoBehaviour
     private float AttackCD;
 
     public static int TotalAttack = 0;
-    //public float AttackTimes = 0.4f;
 
-    //public float Timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -139,7 +137,12 @@ public class AttackMaker : MonoBehaviour
         }
         if (TotalAttack == 5) {
             Instantiate(TotalAttacks, TotalAttacksPoint.position, new Quaternion(0f, 0f, 0f, 0f));
+            Queen.id++;
             TotalAttack = 0;
+            if (HasGamepad)
+            {
+                StartCoroutine(Vibration(0.1f, 0.2f));
+            }
         }
     }
 
