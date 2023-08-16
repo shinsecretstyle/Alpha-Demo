@@ -22,6 +22,8 @@ public class AttackMaker : MonoBehaviour
     public GameObject AttackRange4;
     public Transform AttackRange4Point;
 
+    public GameObject TotalAttacks;
+    public Transform TotalAttacksPoint;
     public GameObject SpecialAttack;
     public Transform SpecialAttackPoint;
 
@@ -41,6 +43,8 @@ public class AttackMaker : MonoBehaviour
 
     private bool canAttack;
     private float AttackCD;
+
+    public static int TotalAttack = 0;
     //public float AttackTimes = 0.4f;
 
     //public float Timer;
@@ -133,7 +137,10 @@ public class AttackMaker : MonoBehaviour
         else if (AttackCD > 0) { 
             canAttack = false;
         }
-
+        if (TotalAttack == 5) {
+            Instantiate(TotalAttacks, TotalAttacksPoint.position, new Quaternion(0f, 0f, 0f, 0f));
+            TotalAttack = 0;
+        }
     }
 
     private IEnumerator Vibration

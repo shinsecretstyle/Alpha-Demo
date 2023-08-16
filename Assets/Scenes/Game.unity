@@ -1215,6 +1215,37 @@ Transform:
   m_Father: {fileID: 1199057848}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &741460096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741460097}
+  m_Layer: 0
+  m_Name: TotalAttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741460097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741460096}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 797306633}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759078814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1367,8 @@ MonoBehaviour:
   AttackRange3Point: {fileID: 1965330836}
   AttackRange4: {fileID: 6403444390148985615, guid: c8265d88850d75d4f9704c5b30175386, type: 3}
   AttackRange4Point: {fileID: 1272107718}
+  TotalAttacks: {fileID: 7030360133386555928, guid: 655062cedcb74c94881fd162c044deb7, type: 3}
+  TotalAttacksPoint: {fileID: 741460097}
   SpecialAttack: {fileID: 1498086476825500177, guid: 546af3371bb836348b0cc08e66bd79d9, type: 3}
   SpecialAttackPoint: {fileID: 607419944}
   SpecialAttack2: {fileID: 8170022146197226812, guid: f7a08216aa9b0f74680216bcc8c5b652, type: 3}
@@ -1360,6 +1393,7 @@ Transform:
   - {fileID: 269823861}
   - {fileID: 1965330836}
   - {fileID: 1272107718}
+  - {fileID: 741460097}
   m_Father: {fileID: 1376059412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

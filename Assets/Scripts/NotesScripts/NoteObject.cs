@@ -51,6 +51,7 @@ public class NoteObject : MonoBehaviour
                     //Debug.Log("Perfect");
                     HK.result += 1;
                     Debug.Log("Perfect" + HK.result);
+                    AttackMaker.TotalAttack += 1;
                 }
                 else if(Goal < 30 && Goal >= 10)
                 {
@@ -59,6 +60,7 @@ public class NoteObject : MonoBehaviour
                     Scores.Point += 2;
                     HK.result += 1;
                     Debug.Log("Good" + HK.result);
+                    AttackMaker.TotalAttack += 1;
                 }
                 else if (Goal < 10 && Goal >= 5)
                 {
@@ -67,6 +69,7 @@ public class NoteObject : MonoBehaviour
                     Scores.Point += 1;
                     HK.result += 1;
                     Debug.Log("ok" + HK.result);
+                    AttackMaker.TotalAttack += 1;
                 }
                 else if (Goal < 5)
                 {
@@ -97,6 +100,7 @@ public class NoteObject : MonoBehaviour
                     Scores.Point += 4;
                     //Debug.Log("Perfect");
                     HK.result += 1;
+                    AttackMaker.TotalAttack += 1;
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
@@ -104,6 +108,7 @@ public class NoteObject : MonoBehaviour
                     //Debug.Log("Good");
                     Scores.Point += 2;
                     HK.result += 1;
+                    AttackMaker.TotalAttack += 1;
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
@@ -111,6 +116,7 @@ public class NoteObject : MonoBehaviour
                     //Debug.Log("ok");
                     Scores.Point += 1;
                     HK.result += 1;
+                    AttackMaker.TotalAttack += 1;
                 }
                 Pressed = true;
 

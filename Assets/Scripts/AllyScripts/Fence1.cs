@@ -16,13 +16,13 @@ public class Fence1 : MonoBehaviour
 
     private SpriteRenderer theSR;
 
-
+    public static int ATK = 2;
     // Start is called before the first frame update
     void Start()
     {
         HpSlider.value = 1;
-        MaxHP = 7;
-        HP = 7;
+        MaxHP = 35;
+        HP = 35;
         theSR = GetComponent<SpriteRenderer>();
         theSR.sprite = Image1;
 

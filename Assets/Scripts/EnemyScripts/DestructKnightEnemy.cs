@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class DestructKnightEnemy : MonoBehaviour
@@ -30,8 +31,12 @@ public class DestructKnightEnemy : MonoBehaviour
     Animator theAnim;
 
     public float AttackCD;
+    public float Fence1CD;
+    public float Fence2CD;
 
     public bool AttackCDisOk;
+    public bool Fence1CanAttack;
+    public bool Fence2CanAttack;
     private AudioSource theSE;
     Transform MainCamera;
 
@@ -51,6 +56,8 @@ public class DestructKnightEnemy : MonoBehaviour
         CanAttackFence1 = false;
         CanAttackFence2 = false;
         CanAttackGate = false;
+        Fence1CD = 1f;
+        Fence2CD = 1f;
 
         theAnim = GetComponent<Animator>();
 
@@ -72,6 +79,23 @@ public class DestructKnightEnemy : MonoBehaviour
         if (HP < 1)
         {
             Destroy(gameObject);
+        }
+        if (Fence1CanAttack) {
+            Fence1CD -= Time.deltaTime;
+            if (Fence1CD < 0)
+            {
+                Fence1CD = 1f;
+                HP -= Fence1.ATK;
+            }
+        }
+        if (Fence2CanAttack)
+        {
+            Fence2CD -= Time.deltaTime;
+            if (Fence2CD < 0)
+            {
+                Fence2CD = 1f;
+                HP -= Fence2.ATK;
+            }
         }
 
         if (CanAttack)
@@ -138,6 +162,13 @@ public class DestructKnightEnemy : MonoBehaviour
             theSR.sprite = AttackedImage;
         }
 
+        if (other.tag == "TotalAttack")
+        {
+            HP -= (Attack.AttackRange4)/2;
+            //theSR.sprite = AttackedImage;
+            
+        }
+
         if (other.tag == "Gate")
         {
             CanAttack = true;
@@ -150,12 +181,14 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttack = true;
             CanMove = false;
             CanAttackFence1 = true;
+            Fence1CanAttack = true;
         }
         if (other.tag == "Fence2")
         {
             CanAttack = true;
             CanMove = false;
             CanAttackFence2 = true;
+            Fence2CanAttack = true;
         }
     }
 
@@ -197,6 +230,8 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttackFence1 = false;
             AttackCD = 3f;
             AttackCDisOk = true;
+            Fence1CanAttack = false;
+
         }
         if (other.tag == "Fence2")
         {
@@ -205,6 +240,7 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttackFence2 = false;
             AttackCD = 3f;
             AttackCDisOk = true;
+            Fence2CanAttack = false;
         }
     }
 }
