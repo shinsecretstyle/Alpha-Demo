@@ -15,6 +15,7 @@ TagManager:
   - AttackRange2
   - AttackRange3
   - AttackRange4
+  - TotalAttack
   layers:
   - Default
   - TransparentFX

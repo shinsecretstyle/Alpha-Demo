@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 88a060efe368c954985cd8271277133b
   - enabled: 1
+    path: Assets/Scenes/Lovetime.unity
+    guid: df0f2d236a17d2b4687c54f82b03f28c
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 63481f198b15ed44193315b1d1902dc4
   - enabled: 1
