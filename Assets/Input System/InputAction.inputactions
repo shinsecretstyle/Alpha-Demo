@@ -148,6 +148,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SaveMusicData",
+                    "type": "Button",
+                    "id": "daece51a-de5d-4b98-9e51-06ea4008c213",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1556,6 +1565,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "New action1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68ea4214-6a85-44d1-9337-b2a3f40ccefe",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveMusicData",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

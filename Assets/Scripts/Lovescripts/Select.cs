@@ -16,6 +16,11 @@ public class Select : MonoBehaviour
     {
         sound01.PlayOneShot(sound01.clip);
     }
+    public void OnNavigate()
+    {
+        sound02.PlayOneShot(sound02.clip);
+        
+    }
     /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) ||
