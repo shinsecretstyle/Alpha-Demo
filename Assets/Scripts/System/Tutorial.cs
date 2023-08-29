@@ -57,7 +57,7 @@ public class Tutorial : MonoBehaviour
         }
         if (id == 7)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("B1W1");
         }
 
     }
@@ -67,6 +67,6 @@ public class Tutorial : MonoBehaviour
     }
     private void OnSkip()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("B1W1");
     }
 }

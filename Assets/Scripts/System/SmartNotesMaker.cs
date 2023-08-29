@@ -54,6 +54,8 @@ public class SmartNotesMaker : MonoBehaviour
 
     public TextAsset textJSON;
 
+    public String NextScene;
+
     [System.Serializable]
     public class Notes
     {
@@ -161,7 +163,7 @@ public class SmartNotesMaker : MonoBehaviour
             {
                 if (Gate.HP > 0)
                 {
-                    SceneManager.LoadScene("GameClear");
+                    SceneManager.LoadScene("Lovetime");
                 }
             }
         }
