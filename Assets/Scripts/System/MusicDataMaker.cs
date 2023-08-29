@@ -35,9 +35,10 @@ public class MusicDataMaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
+        
         myNotesList.notes = new Notes[350];
-
+        id = 0;
     }
 
     // Update is called once per frame
@@ -106,6 +107,8 @@ public class MusicDataMaker : MonoBehaviour
     public void OnSaveMusicData() {
         Array.Resize(ref myNotesList.notes, id);
         myNotesList.totalNotes = id;
+        myNotesList.MusicTotalTime = PassingTime;
+        myNotesList.beatFallSpeed = 240;
         string jsondata = JsonUtility.ToJson(myNotesList);
         Debug.Log(jsondata);
 
