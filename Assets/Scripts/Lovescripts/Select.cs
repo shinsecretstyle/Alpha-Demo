@@ -16,7 +16,7 @@ public class Select : MonoBehaviour
     {
         sound01.PlayOneShot(sound01.clip);
     }
-    public void OnNavigate()
+    public void OnMove()
     {
         sound02.PlayOneShot(sound02.clip);
         
