@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class AttackMaker : MonoBehaviour
 {
-    public KeyCode Attacker1;
-    public KeyCode Attacker2;
-    public KeyCode Attacker3;
-    public KeyCode Attacker4;
 
     public GameObject AttackRange1;
     public Transform AttackRange1Point;
@@ -16,27 +12,22 @@ public class AttackMaker : MonoBehaviour
     public GameObject AttackRange2;
     public Transform AttackRange2Point;
 
-    public GameObject AttackRange3;
-    public Transform AttackRange3Point;
-
-    public GameObject AttackRange4;
-    public Transform AttackRange4Point;
-
+    //auto attack
     public GameObject TotalAttacks;
     public Transform TotalAttacksPoint;
-    public GameObject SpecialAttack;
-    public Transform SpecialAttackPoint;
 
-    public GameObject SpecialAttack2;
-    public Transform SpecialAttackPoint2;
+    //public GameObject SpecialAttack;
+    //public Transform SpecialAttackPoint;
+
+    //public GameObject SpecialAttack2;
+    //public Transform SpecialAttackPoint2;
 
     AudioSource theAS;
     Transform MainCamera;
 
     public AudioClip Range1SE;
     public AudioClip Range2SE;
-    public AudioClip Range3SE;
-    public AudioClip Range4SE;
+
 
     private Gamepad gamepad;
     private bool HasGamepad;
@@ -91,34 +82,7 @@ public class AttackMaker : MonoBehaviour
             }
         }
     }
-    private void OnAttackRange3()
-    {
-        if (canAttack)
-        {
-            ResetCD();
-            AudioSource.PlayClipAtPoint(Range3SE, MainCamera.position);
-            Instantiate(AttackRange3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            Queen.id++;
-            if (HasGamepad)
-            {
-                StartCoroutine(Vibration(0.6f, 0.4f));
-            }
-        }
-    }
-    private void OnAttackRange4()
-    {
-        if (canAttack)
-        {
-            ResetCD();
-            AudioSource.PlayClipAtPoint(Range4SE, MainCamera.position);
-            Instantiate(AttackRange4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            Queen.id++;
-            if (HasGamepad)
-            {
-                StartCoroutine(Vibration(1.2f, 0.7f));
-            }
-        }
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -135,6 +99,8 @@ public class AttackMaker : MonoBehaviour
         else if (AttackCD > 0) { 
             canAttack = false;
         }
+
+        //Auto Attack when finished 5 notes
         if (TotalAttack == 5) {
             Instantiate(TotalAttacks, TotalAttacksPoint.position, new Quaternion(0f, 0f, 0f, 0f));
             Queen.id++;

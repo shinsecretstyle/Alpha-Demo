@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public static int AttackRange1 = 8;
-    public static int AttackRange2 = 6;
+    //ATK
+    public static int AttackRange1 = 3;
+    public static int AttackRange2 = 3;
     public static int AttackRange3 = 4;
     public static int AttackRange4 = 2;
     
