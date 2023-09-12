@@ -139,9 +139,9 @@ MonoBehaviour:
   Pressed: 0
   keyToPress: 102
   NotesAudioClip1: {fileID: 8300000, guid: 0bb6271dd023baf418d6ff9a7e3770e3, type: 3}
-  Perfect: {fileID: 8300000, guid: 97af761dc19be1545b91739e05d8d2ce, type: 3}
-  Good: {fileID: 8300000, guid: 7e1b00f623e332f458395ed91bcdc7a5, type: 3}
-  OK: {fileID: 8300000, guid: e6b1ea9ea0b31134f9b1e18f9d282aff, type: 3}
+  Perfect: {fileID: 8300000, guid: abcb9ed7d2f5b3c4b8a339ad0c67c9ef, type: 3}
+  Good: {fileID: 8300000, guid: ccf941ee15f73c74a89c09155b54b99f, type: 3}
+  OK: {fileID: 8300000, guid: 9c8ac30b745c3cb45bc2c1c8d6d0f166, type: 3}
 --- !u!114 &7451100718165837767
 MonoBehaviour:
   m_ObjectHideFlags: 0
