@@ -112,7 +112,7 @@ public class MusicDataMaker : MonoBehaviour
         string jsondata = JsonUtility.ToJson(myNotesList);
         Debug.Log(jsondata);
 
-        using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\" + "B1W1.txt");
+        using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\" + "DEMO1.txt");
         writer.Write(jsondata);
     }
 }

@@ -52,7 +52,7 @@ public class SmartNotesMaker : MonoBehaviour
     private float GamingTime = 0.0f;
     public float beginningTime = 0.0f;
 
-    public TextAsset textJSON;
+    public TextAsset NotesData;
 
     public String NextScene;
 
@@ -83,7 +83,7 @@ public class SmartNotesMaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myNotesList = JsonUtility.FromJson<NotesList>(textJSON.text);
+        myNotesList = JsonUtility.FromJson<NotesList>(NotesData.text);
         //JSONデータローディング
 
         StartedTime = DateTime.Now;
