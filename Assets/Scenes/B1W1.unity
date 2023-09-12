@@ -212,7 +212,7 @@ MonoBehaviour:
   NowNotes: 0
   totalTime: 0
   beginningTime: 0
-  NotesData: {fileID: 4900000, guid: 93c8de8bc3143e24d8f39c1e66ce2e43, type: 3}
+  textJSON: {fileID: 4900000, guid: d764468524c3dfa419563f8f63c0b3c4, type: 3}
   NextScene: 
   myNotesList:
     MusicTotalTime: 0
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 105218705}
   - component: {fileID: 105218704}
   m_Layer: 5
-  m_Name: Fence1Canvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3532,7 +3532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0
   MainCameraTransform: {fileID: 0}
-  Music1: {fileID: 8300000, guid: 63012bbb6d6a11241bc88f41b8516b3b, type: 3}
+  Music1: {fileID: 8300000, guid: 612b198a38fb6d54682ea06df902fd32, type: 3}
 --- !u!1 &1735326112
 GameObject:
   m_ObjectHideFlags: 0
