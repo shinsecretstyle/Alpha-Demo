@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Lovetime.unity
     guid: df0f2d236a17d2b4687c54f82b03f28c
   - enabled: 1
+    path: Assets/Scenes/Love success.unity
+    guid: c363c2c7f3f3cfe44b9b2948a4eb96aa
+  - enabled: 1
+    path: Assets/Scenes/Love failure.unity
+    guid: d26aa0d0f808dbe4e903c617df3cb158
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 63481f198b15ed44193315b1d1902dc4
   - enabled: 1

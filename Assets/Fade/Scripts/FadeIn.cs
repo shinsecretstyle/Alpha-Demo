@@ -9,7 +9,7 @@ public class FadeIn : MonoBehaviour
     [SerializeField] Fade fade;
     public void NextScene()
     {
-        Action act = () => SceneManager.LoadScene("GameClear");
+        Action act = () => SceneManager.LoadScene("Love failure");
         float time = 1f;
 
         //1秒間フェードしてからにシーン移動する
