@@ -52,6 +52,7 @@ public class NoteObject : MonoBehaviour
                     HK.result += 1;
                     Debug.Log("Perfect" + HK.result);
                     AttackMaker.TotalAttack += 1;
+
                 }
                 else if(Goal < 30 && Goal >= 10)
                 {
