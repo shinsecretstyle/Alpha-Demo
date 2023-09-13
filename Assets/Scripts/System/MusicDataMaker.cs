@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class MusicDataMaker : MonoBehaviour
 {
-    public KeyCode KC;
-    public KeyCode save;
+    //public KeyCode KC;
+    //public KeyCode save;
     [System.Serializable]
     public class Notes
     {
@@ -27,6 +27,7 @@ public class MusicDataMaker : MonoBehaviour
         public Notes[] notes;
     }
 
+    public string FileName;
     public float PassingTime;
 
     public NotesList myNotesList = new NotesList();
@@ -110,9 +111,9 @@ public class MusicDataMaker : MonoBehaviour
         myNotesList.MusicTotalTime = PassingTime;
         myNotesList.beatFallSpeed = 240;
         string jsondata = JsonUtility.ToJson(myNotesList);
-        Debug.Log(jsondata);
+        Debug.Log("music data files saved path is"+@"\MusicData\" + FileName + ".txt");
 
-        using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\" + "B1W1.txt");
+        using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\" + FileName+".txt");
         writer.Write(jsondata);
     }
 }
