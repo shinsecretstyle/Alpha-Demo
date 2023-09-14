@@ -10,7 +10,7 @@ public class DogEnemy : MonoBehaviour
     public int Speed;
 
     public Slider HpSlider;
-    private int MaxHp = AllEnemy.DogEnemyMaxHP;
+    private int MaxHp = AllEnemy.DogEnemy.MaxHP;
 
     public int ATK;
     public bool CanMove;
@@ -48,9 +48,9 @@ public class DogEnemy : MonoBehaviour
         HP = MaxHp;
         CanMove = true;
         CanAttack = false;
-        Speed = AllEnemy.DogEnemySpeed;
-        ATK = AllEnemy.DogEnemyATK;
-        AttackCD = AllEnemy.DogEnemyCD;
+        Speed = AllEnemy.DogEnemy.Speed;
+        ATK = AllEnemy.DogEnemy.ATK;
+        AttackCD = AllEnemy.DogEnemy.CD;
         AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
@@ -136,7 +136,7 @@ public class DogEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = AllEnemy.DogEnemyCD;
+                AttackCD = AllEnemy.DogEnemy.CD;
             }
         }
     }
@@ -231,7 +231,7 @@ public class DogEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
-            AttackCD = AllEnemy.DogEnemyCD;
+            AttackCD = AllEnemy.DogEnemy.CD;
             AttackCDisOk = true;
             Fence1CanAttack = false;
 
@@ -241,7 +241,7 @@ public class DogEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
-            AttackCD = AllEnemy.DogEnemyCD;
+            AttackCD = AllEnemy.DogEnemy.CD;
             AttackCDisOk = true;
             Fence2CanAttack = false;
         }

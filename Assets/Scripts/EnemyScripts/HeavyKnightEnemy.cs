@@ -11,7 +11,7 @@ public class HeavyKnightEnemy : MonoBehaviour
 
     public Slider HpSlider;
 
-    private int MaxHp =AllEnemy.HeavyKnightEnemyMaxHP;
+    private int MaxHp =AllEnemy.HeavyKnightEnemy.MaxHP;
 
     public int ATK;
     public bool CanMove;
@@ -48,9 +48,9 @@ public class HeavyKnightEnemy : MonoBehaviour
         HP = MaxHp;
         CanMove = true;
         CanAttack = false;
-        Speed = AllEnemy.HeavyKnightEnemySpeed;
-        ATK = AllEnemy.HeavyKnightEnemyATK;
-        AttackCD = AllEnemy.HeavyKnightEnemyCD;
+        Speed = AllEnemy.HeavyKnightEnemy.Speed;
+        ATK = AllEnemy.HeavyKnightEnemy.ATK;
+        AttackCD = AllEnemy.HeavyKnightEnemy.CD;
         AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
@@ -135,7 +135,7 @@ public class HeavyKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = AllEnemy.HeavyKnightEnemyCD;
+                AttackCD = AllEnemy.HeavyKnightEnemy.CD;
             }
         }
     }
@@ -230,7 +230,7 @@ public class HeavyKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
-            AttackCD = AllEnemy.HeavyKnightEnemyCD;
+            AttackCD = AllEnemy.HeavyKnightEnemy.CD;
             AttackCDisOk = true;
             Fence1CanAttack = false;
 
@@ -240,7 +240,7 @@ public class HeavyKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
-            AttackCD = AllEnemy.HeavyKnightEnemyCD;
+            AttackCD = AllEnemy.HeavyKnightEnemy.CD;
             AttackCDisOk = true;
             Fence2CanAttack = false;
         }

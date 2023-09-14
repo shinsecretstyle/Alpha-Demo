@@ -218,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4905751329528811262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.27, y: 6.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -302,7 +302,11 @@ MonoBehaviour:
   DefaultImage: {fileID: 21300000, guid: c0f89a0a1646c8349a92278b610b55f2, type: 3}
   AttackedImage: {fileID: 21300000, guid: 5001279662e93284ba9472d89c502332, type: 3}
   AttackCD: 0
+  Fence1CD: 0
+  Fence2CD: 0
   AttackCDisOk: 0
+  Fence1CanAttack: 0
+  Fence2CanAttack: 0
   AttackSE1: {fileID: 8300000, guid: 6eb72c75e0fcdc04b905b225912096e7, type: 3}
 --- !u!70 &4905751329528811258
 CapsuleCollider2D:

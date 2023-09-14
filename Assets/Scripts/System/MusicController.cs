@@ -10,7 +10,7 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waitTime = 1.35f;
+        waitTime = 0f;
         MainCameraTransform = GameObject.Find("Main Camera").transform;
 
     }
