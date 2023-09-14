@@ -14,7 +14,7 @@ public class MKnightEnemy : MonoBehaviour
 
     public Slider HpSlider;
 
-    private int MaxHp = AllEnemy.MKnightEnemyMaxHP;
+    private int MaxHp = AllEnemy.NormalEnemy.Speed;
 
     public bool CanMove;
 
@@ -49,11 +49,11 @@ public class MKnightEnemy : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         HpSlider.value = 1;
         HP = MaxHp;
-        ATK = AllEnemy.MKnightEnemyATK;
+        ATK = AllEnemy.NormalEnemy.ATK;
         CanMove = true;
         CanAttack = false;
-        Speed = AllEnemy.MKnightEnemySpeed;
-        AttackCD = AllEnemy.MKnightEnemyCD;
+        Speed = AllEnemy.NormalEnemy.Speed;
+        AttackCD = AllEnemy.NormalEnemy.Speed;
         AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
@@ -139,7 +139,7 @@ public class MKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = 3f;
+                AttackCD = AllEnemy.MKnightEnemy.CD;
             }
         }
     }
@@ -234,7 +234,7 @@ public class MKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
-            AttackCD = 3f;
+            AttackCD = AllEnemy.MKnightEnemy.CD;
             AttackCDisOk = true;
             Fence1CanAttack = false;
         }
@@ -243,7 +243,7 @@ public class MKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
-            AttackCD = 3f;
+            AttackCD = AllEnemy.MKnightEnemy.CD;
             AttackCDisOk = true;
             Fence2CanAttack = false;
         }

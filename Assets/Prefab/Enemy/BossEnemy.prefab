@@ -150,8 +150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.087999344, y: 4.33}
-  m_SizeDelta: {x: 4, y: 4}
+  m_AnchoredPosition: {x: -0.087999344, y: 0.09}
+  m_SizeDelta: {x: 4.5, y: 4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6646690274494806250
 Canvas:
@@ -327,8 +327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.75}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 0.03, y: 1.82}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7143099453516979315
 MonoBehaviour:
@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 7272089254227644914}
   - component: {fileID: 7272089254227644924}
   - component: {fileID: 7272089254227644927}
+  - component: {fileID: 7763384140370555245}
   m_Layer: 0
   m_Name: BossEnemy
   m_TagString: Untagged
@@ -420,8 +421,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7272089254227644926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.91, y: 6.63, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0.32, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6853315424303709845}
@@ -443,8 +444,21 @@ MonoBehaviour:
   HP: 0
   Speed: 0
   HpSlider: {fileID: 7143099453516979315}
+  ATK: 0
+  CanMove: 0
+  CanAttack: 0
+  CanAttackFence1: 0
+  CanAttackFence2: 0
+  CanAttackGate: 0
   DefaultImage: {fileID: 21300000, guid: 99ce1ce6dedc5464fbf034ebcdc8c4bc, type: 3}
   AttackedImage: {fileID: 21300000, guid: bb4d685ee5a2a304ba8478ac9347ea49, type: 3}
+  AttackCD: 0
+  Fence1CD: 0
+  Fence2CD: 0
+  AttackCDisOk: 0
+  Fence1CanAttack: 0
+  Fence2CanAttack: 0
+  AttackSE1: {fileID: 0}
 --- !u!212 &7272089254227644924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -486,7 +500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 99ce1ce6dedc5464fbf034ebcdc8c4bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 994ecc1b65b7e804abdd2d5f24130499, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -510,6 +524,27 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0942698, y: 0.6616554}
-  m_Size: {x: 12.1796665, y: 12.9431095}
+  m_Offset: {x: -0.24242592, y: 0.19153404}
+  m_Size: {x: 7.8863754, y: 7.8863773}
   m_Direction: 0
+--- !u!95 &7763384140370555245
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7272089254227644926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6014c956a25e61848924bf908a114487, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

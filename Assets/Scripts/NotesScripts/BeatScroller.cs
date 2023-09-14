@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeatScroller : MonoBehaviour
 {
-    public TextAsset textJSON;
+    //public TextAsset textJSON;
     public float beatFallSpeed;
     public bool isStarted;
 

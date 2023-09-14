@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5948590326282430301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.89, y: 5.5096803, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -378,7 +378,11 @@ MonoBehaviour:
   DefaultImage: {fileID: 21300000, guid: 388373ea29cda444aa6307e84834eb90, type: 3}
   AttackedImage: {fileID: 21300000, guid: a017165da55ede54bb130e3670161e55, type: 3}
   AttackCD: 0
+  Fence1CD: 0
+  Fence2CD: 0
   AttackCDisOk: 0
+  Fence1CanAttack: 0
+  Fence2CanAttack: 0
   AttackSE1: {fileID: 8300000, guid: 180f35aef2ea2654086bcbb52d58ec0b, type: 3}
 --- !u!212 &5948590326282430303
 SpriteRenderer:

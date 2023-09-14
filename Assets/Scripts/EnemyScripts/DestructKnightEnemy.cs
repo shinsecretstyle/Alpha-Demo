@@ -12,7 +12,7 @@ public class DestructKnightEnemy : MonoBehaviour
 
     public Slider HpSlider;
 
-    private int MaxHp = AllEnemy.DestructKnightEnemyMaxHP;
+    private int MaxHp = AllEnemy.DestructKnightEnemy.MaxHP;
 
     public int ATK;
     public bool CanMove;
@@ -48,9 +48,9 @@ public class DestructKnightEnemy : MonoBehaviour
         HP = MaxHp;
         CanMove = true;
         CanAttack = false;
-        Speed = AllEnemy.DestructKnightEnemySpeed;
-        ATK = AllEnemy.DestructKnightEnemyATK;
-        AttackCD = AllEnemy.DestructKnightEnemyCD;
+        Speed = AllEnemy.DestructKnightEnemy.Speed;
+        ATK = AllEnemy.DestructKnightEnemy.ATK;
+        AttackCD = AllEnemy.DestructKnightEnemy.CD;
         AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;
@@ -133,7 +133,7 @@ public class DestructKnightEnemy : MonoBehaviour
             if (AttackCD < 0)
             {
                 AttackCDisOk = true;
-                AttackCD = AllEnemy.DestructKnightEnemyCD;
+                AttackCD = AllEnemy.DestructKnightEnemy.CD;
             }
         }
     }
@@ -228,7 +228,7 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence1 = false;
-            AttackCD = AllEnemy.DestructKnightEnemyCD;
+            AttackCD = AllEnemy.DestructKnightEnemy.CD;
             AttackCDisOk = true;
             Fence1CanAttack = false;
 
@@ -238,7 +238,7 @@ public class DestructKnightEnemy : MonoBehaviour
             CanAttack = false;
             CanMove = true;
             CanAttackFence2 = false;
-            AttackCD = AllEnemy.DestructKnightEnemyCD;
+            AttackCD = AllEnemy.DestructKnightEnemy.CD;
             AttackCDisOk = true;
             Fence2CanAttack = false;
         }

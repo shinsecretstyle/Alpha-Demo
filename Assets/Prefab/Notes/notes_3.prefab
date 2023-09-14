@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81541cd266553d43919b6c44e3c36cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: 1c217166d3a93e04a8698c0321c8bb51, type: 3}
+  textJSON: {fileID: 4900000, guid: d764468524c3dfa419563f8f63c0b3c4, type: 3}
   beatFallSpeed: 0
   isStarted: 0
 --- !u!82 &-5163604809843786637

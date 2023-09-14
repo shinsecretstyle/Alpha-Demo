@@ -4,41 +4,77 @@ using UnityEngine;
 
 public class AllEnemy : MonoBehaviour
 {
+    //Enemy Setting class 
+    //MaxHP
+    //Speed
+    //ATK
+    //CD
 
     //NormalEnemy Setting
-    public static int NormalEnemyMaxHP = 12;
-    public static int NormalEnemySpeed = 90;
-    public static int NormalEnemyATK = 2;
-    public static float NormalEnemyCD = 2f;
+    public static class NormalEnemy
+    {
+
+        public static int MaxHP = 12;
+        public static int Speed = 90;
+        public static int ATK = 2;
+        public static float CD = 2f;
+    }
+
 
     //MKnightEnemy Setting
-    public static int MKnightEnemyMaxHP = 20;
-    public static int MKnightEnemySpeed = 70;
-    public static int MKnightEnemyATK = 3;
-    public static float MKnightEnemyCD = 3f;
+    public static class MKnightEnemy
+    {
+
+        public static int MaxHP = 20;
+        public static int Speed = 70;
+        public static int ATK = 3;
+        public static float CD = 3f;
+    }
+
 
     //DestructKnightEnemy Setting
-    public static int DestructKnightEnemyMaxHP = 30;
-    public static int DestructKnightEnemySpeed = 60;
-    public static int DestructKnightEnemyATK = 8;
-    public static float DestructKnightEnemyCD = 4f;
+    public static class DestructKnightEnemy
+    {
+        public static int MaxHP = 30;
+        public static int Speed = 60;
+        public static int ATK = 8;
+        public static float CD = 4f;
+    }
 
     //DogEnemy Setting
-    public static int DogEnemyMaxHP = 8;
-    public static int DogEnemySpeed = 120;
-    public static int DogEnemyATK = 1;
-    public static float DogEnemyCD = 1f;
+    public static class DogEnemy
+    {
+        public static int MaxHP = 8;
+        public static int Speed = 120;
+        public static int ATK = 1;
+        public static float CD = 1f;
+    }
 
     //HeavyKnightEnemy Setting
-    public static int HeavyKnightEnemyMaxHP = 50;
-    public static int HeavyKnightEnemySpeed = 60;
-    public static int HeavyKnightEnemyATK = 10;
-    public static float HeavyKnightEnemyCD = 4f;
+    public static class HeavyKnightEnemy
+    {
+        public static int MaxHP = 50;
+        public static int Speed = 60;
+        public static int ATK = 10;
+        public static float CD = 3f;
+    }
 
 
     //BossEnemy Setting
-    public static int BossEnemyMaxHP = 150;
-    public static int BossEnemySpeed = 40;
-    public static int BossEnemyATK = 15;
-    public static float BossEnemyCD = 5f;
+    public static class BossEnemy
+    {
+        public static int MaxHP = 250;
+        public static int Speed = 20;
+        public static int ATK = 15;
+        public static float CD = 4f;
+    }
+
+    //DragonEnemy Setting
+    public static class DragonEnemy
+    {
+        public static int MaxHP = 20;
+        public static int Speed = 60;
+        public static int ATK = 10;
+        public static float CD = 2f;
+    }
 }

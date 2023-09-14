@@ -83,6 +83,8 @@ public class SmartNotesMaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.GameClear = 0;
+
         myNotesList = JsonUtility.FromJson<NotesList>(textJSON.text);
         //JSONデータローディング
 
