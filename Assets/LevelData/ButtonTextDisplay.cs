@@ -11,6 +11,9 @@ public class ButtonTextDisplay : MonoBehaviour
     public GameObject newImage;     // 別の画像を表示するための GameObject
     public InputAction moveAction;  // セレクト移動のアクション
     public InputAction pressAction; // ボタンを押すアクション
+    public AudioSource audioSource; // オーディオソース
+    public AudioClip selectSound;   // セレクト移動時の音
+    public AudioClip buttonSound;   // ボタン押下時の音
 
     private bool textDisplayed;     // テキストが表示されたかどうかのフラグ
 
@@ -68,6 +71,10 @@ public class ButtonTextDisplay : MonoBehaviour
 
             // 新しい画像を表示
             newImage.SetActive(true);
+
+            // ボタン押下時の音を再生
+            audioSource.clip = buttonSound;
+            audioSource.Play();
         }
     }
 
@@ -78,6 +85,10 @@ public class ButtonTextDisplay : MonoBehaviour
         if (previous != null)
         {
             previous.Select();
+
+            // セレクト移動時の音を再生
+            audioSource.clip = selectSound;
+            audioSource.Play();
         }
     }
 
@@ -88,11 +99,15 @@ public class ButtonTextDisplay : MonoBehaviour
         if (next != null)
         {
             next.Select();
+
+            // セレクト移動時の音を再生
+            audioSource.clip = selectSound;
+            audioSource.Play();
         }
     }
 
     private void PressButton()
     {
-        // ボタンを押すアクションがトリガーされたときの処理をここに追加
+        // ボタン押下時の処理をここに追加
     }
 }

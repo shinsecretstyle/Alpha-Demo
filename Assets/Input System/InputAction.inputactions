@@ -1701,6 +1701,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonPress",
+                    "type": "Button",
+                    "id": "7f8f532e-4c84-4792-a2b0-35a971c4c0cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -2515,6 +2524,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "094831ad-df35-4f78-9f03-c2ce6e75a20f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44014910-9955-4c1c-a8bb-46c9958909b3",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ButtonPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
