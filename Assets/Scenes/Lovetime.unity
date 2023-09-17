@@ -329,12 +329,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 435870235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cad4d24de112dd419dc66be93fb4acc, type: 3}
+  m_Script: {fileID: 11500000, guid: a657abdfe4de6ff4d9b1dddc5d27799b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToShow: {fileID: 2044546172}
-  textToShow: {fileID: 450629945}
-  panelToShow: {fileID: 1450981438}
+  imageToShow: {fileID: 1450981438}
+  panelToShow: {fileID: 2044546172}
   fadeInSpeed: 0.5
 --- !u!1 &450629943
 GameObject:
@@ -353,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &450629944
 RectTransform:
   m_ObjectHideFlags: 0
