@@ -3,28 +3,22 @@ using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections; // IEnumeratorを含む名前空間
 
-public class ShowImageAndText : MonoBehaviour
+public class ShowObjectsAndText : MonoBehaviour
 {
     public GameObject imageToShow;
     public TextMeshProUGUI textToShow;
+    public GameObject panelToShow;
     public float fadeInSpeed = 0.5f; // フェードイン速度を調整するパラメータ
 
     private bool objectsFaded = false;
-
     private float currentAlpha = 0f; // アルファ値を管理するための変数
 
     void Start()
     {
-        // 画像とテキストを非表示にする
-        if (imageToShow != null)
-        {
-            SetAlpha(imageToShow, 0f);
-        }
-
-        if (textToShow != null)
-        {
-            SetAlpha(textToShow.gameObject, 0f);
-        }
+        // 画像、テキスト、パネルを非表示にする
+        SetAlpha(imageToShow, 0f);
+        SetAlpha(textToShow.gameObject, 0f);
+        SetAlpha(panelToShow, 0f);
     }
 
     void Update()
@@ -32,7 +26,7 @@ public class ShowImageAndText : MonoBehaviour
         if (!objectsFaded)
         {
             // ObjectFadeスクリプトを持つGameObjectが存在しない場合、
-            // 画像とテキストを表示する
+            // 画像、テキスト、パネルを表示する
             if (GameObject.FindObjectOfType<ObjectFade>() == null)
             {
                 objectsFaded = true;
@@ -44,7 +38,12 @@ public class ShowImageAndText : MonoBehaviour
 
                 if (textToShow != null)
                 {
-                    StartCoroutine(FadeInText(textToShow));
+                    StartCoroutine(FadeInObject(textToShow.gameObject));
+                }
+
+                if (panelToShow != null)
+                {
+                    StartCoroutine(FadeInObject(panelToShow));
                 }
             }
         }
@@ -63,22 +62,11 @@ public class ShowImageAndText : MonoBehaviour
         }
     }
 
-    // テキストを徐々にフェードインするコルーチン
-    IEnumerator FadeInText(TextMeshProUGUI text)
-    {
-        currentAlpha = 0f;
-
-        while (currentAlpha < 1f)
-        {
-            currentAlpha += fadeInSpeed * Time.deltaTime;
-            SetAlpha(text.gameObject, currentAlpha);
-            yield return null;
-        }
-    }
-
     // ゲームオブジェクトのアルファ値を設定するメソッド
     void SetAlpha(GameObject obj, float alpha)
     {
+        if (obj == null) return;
+
         if (obj.TryGetComponent<Renderer>(out Renderer renderer))
         {
             Color objColor = renderer.material.color;
