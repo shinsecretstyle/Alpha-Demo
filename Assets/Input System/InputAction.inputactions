@@ -132,7 +132,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "35ce9db7-16eb-437f-a83a-18bd14b4b154",
                     "expectedControlType": "Button",
@@ -1549,11 +1549,11 @@
                 {
                     "name": "",
                     "id": "150eca36-42b5-41c0-baa7-27afacf6d6d4",
-                    "path": "",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

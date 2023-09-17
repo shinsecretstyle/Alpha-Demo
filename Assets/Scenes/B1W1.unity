@@ -488,7 +488,7 @@ Transform:
   m_Children:
   - {fileID: 1169012574}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &157175113
 PolygonCollider2D:
@@ -699,8 +699,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1376059412}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376667396
 GameObject:
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 376667399}
   - component: {fileID: 376667400}
   m_Layer: 0
-  m_Name: charactor1_attack2
+  m_Name: "\u9B54\u738B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +786,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &376667399
 MonoBehaviour:
@@ -1124,7 +1124,7 @@ Transform:
   m_Children:
   - {fileID: 105218703}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &528175353
 EdgeCollider2D:
@@ -1318,6 +1318,7 @@ MonoBehaviour:
   TotalAttacksPoint: {fileID: 741460097}
   Range1SE: {fileID: 8300000, guid: ccfd823c441ac7d438af966835b25c38, type: 3}
   Range2SE: {fileID: 8300000, guid: 5c42bd54ca946644e8bc7be080863510, type: 3}
+  PauseMenu: {fileID: 3077143433363227348, guid: ddbade1b33adcfe4692182fab40f535f, type: 3}
 --- !u!4 &797306633
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,7 +1460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -1577,7 +1578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &821747118
 GameObject:
@@ -1689,7 +1690,7 @@ Transform:
   m_Children:
   - {fileID: 1199057848}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &961637785
 GameObject:
@@ -1876,7 +1877,7 @@ Transform:
   m_Children:
   - {fileID: 1161939225}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1144548858
 MonoBehaviour:
@@ -2461,7 +2462,7 @@ RectTransform:
   m_Children:
   - {fileID: 821747119}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2562,6 +2563,7 @@ Transform:
   - {fileID: 1293544071}
   - {fileID: 625320266}
   - {fileID: 1612604647}
+  - {fileID: 328241142}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3510,11 +3512,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706417209}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7dd72bc7144c82843aea681078b0387f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3700,7 +3702,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735326116
 MonoBehaviour:

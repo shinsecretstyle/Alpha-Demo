@@ -37,6 +37,7 @@ public class AttackMaker : MonoBehaviour
 
     public static int TotalAttack = 0;
 
+    public GameObject PauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,6 +111,16 @@ public class AttackMaker : MonoBehaviour
                 StartCoroutine(Vibration(0.1f, 0.2f));
             }
         }
+
+        if(SystemStatus.IsPaused == false)
+        {
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
+           
+        }
+        if(SystemStatus.IsPaused == true) 
+        {
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+        }
     }
 
     private IEnumerator Vibration
@@ -126,5 +137,14 @@ public class AttackMaker : MonoBehaviour
     private void ResetCD()
     {
         AttackCD = 0f;
+    }
+
+    public void OnPause()
+    {
+        if (SystemStatus.IsPaused == false)
+        {
+            Instantiate(PauseMenu);
+        }
+        
     }
 }

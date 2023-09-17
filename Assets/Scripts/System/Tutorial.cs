@@ -68,5 +68,6 @@ public class Tutorial : MonoBehaviour
     private void OnSkip()
     {
         SceneManager.LoadScene("B1W1");
+        
     }
 }
