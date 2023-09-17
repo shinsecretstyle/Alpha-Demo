@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
-using System.Collections; // IEnumeratorを含む名前空間
+using System.Collections;
 
-public class ShowObjectsAndText : MonoBehaviour
+public class ShowObjects : MonoBehaviour
 {
     public GameObject imageToShow;
-    public TextMeshProUGUI textToShow;
     public GameObject panelToShow;
     public float fadeInSpeed = 0.5f; // フェードイン速度を調整するパラメータ
 
@@ -15,10 +13,9 @@ public class ShowObjectsAndText : MonoBehaviour
 
     void Start()
     {
-        // 画像、テキスト、パネルを非表示にする
+        // 画像は非表示、パネルは表示しないよう初期化
         SetAlpha(imageToShow, 0f);
-        SetAlpha(textToShow.gameObject, 0f);
-        SetAlpha(panelToShow, 0f);
+        SetAlpha(panelToShow, 0f); // パネルを初期状態で非表示
     }
 
     void Update()
@@ -26,7 +23,7 @@ public class ShowObjectsAndText : MonoBehaviour
         if (!objectsFaded)
         {
             // ObjectFadeスクリプトを持つGameObjectが存在しない場合、
-            // 画像、テキスト、パネルを表示する
+            // 画像、パネルを表示する
             if (GameObject.FindObjectOfType<ObjectFade>() == null)
             {
                 objectsFaded = true;
@@ -36,14 +33,10 @@ public class ShowObjectsAndText : MonoBehaviour
                     StartCoroutine(FadeInObject(imageToShow));
                 }
 
-                if (textToShow != null)
-                {
-                    StartCoroutine(FadeInObject(textToShow.gameObject));
-                }
-
                 if (panelToShow != null)
                 {
-                    StartCoroutine(FadeInObject(panelToShow));
+                    panelToShow.SetActive(true); // パネルを表示
+                    StartCoroutine(FadeInObject(panelToShow)); // パネルをフェードイン
                 }
             }
         }
