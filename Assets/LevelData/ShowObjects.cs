@@ -73,4 +73,22 @@ public class ShowObjects : MonoBehaviour
             canvasRenderer.SetColor(objColor);
         }
     }
+    public void OnButtonClick()
+    {
+        if (!objectsFaded)
+        {
+            objectsFaded = true;
+
+            if (imageToShow != null)
+            {
+                StartCoroutine(FadeInObject(imageToShow));
+            }
+
+            if (panelToShow != null)
+            {
+                panelToShow.SetActive(true); // パネルを表示
+                StartCoroutine(FadeInObject(panelToShow)); // パネルをフェードイン
+            }
+        }
+    }
 }
