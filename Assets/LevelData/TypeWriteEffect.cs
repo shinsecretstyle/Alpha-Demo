@@ -1,52 +1,44 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TypeWriteEffect : MonoBehaviour
 {
-    // 対象のテキスト
     [SerializeField] private TMP_Text _text;
-
-    // 次の文字を表示するまでの時間[s]
-    [SerializeField] private float _delayDuration = 0.1f;
+    [SerializeField] private Button _startButton;
+    [SerializeField] private float _initialDelay = 2.0f; // ボタン押してから表示が始まるまでの初期待機時間
+    [SerializeField] private float _delayDuration = 0.1f; // 文字の表示間隔
 
     private Coroutine _showCoroutine;
 
-    /// <summary>
-    /// 文字送り演出を表示する
-    /// </summary>
-    public void Show()
+    private void Start()
     {
-        // 前回の演出処理が走っていたら、停止
+        _text.maxVisibleCharacters = 0; // 最初はテキストを非表示にする
+
+        _startButton.onClick.AddListener(ShowText);
+    }
+
+    private void ShowText()
+    {
         if (_showCoroutine != null)
             StopCoroutine(_showCoroutine);
 
-        // １文字ずつ表示する演出のコルーチンを実行する
         _showCoroutine = StartCoroutine(ShowCoroutine());
     }
 
-    // １文字ずつ表示する演出のコルーチン
     private IEnumerator ShowCoroutine()
     {
-        // 待機用コルーチン
-        // GC Allocを最小化するためキャッシュしておく
-        var delay = new WaitForSeconds(_delayDuration);
+        yield return new WaitForSeconds(_initialDelay); // 初期待機時間
 
-        // テキスト全体の長さ
+        var delay = new WaitForSeconds(_delayDuration);
         var length = _text.text.Length;
 
-        // １文字ずつ表示する演出
-        for (var i = 0; i < length; i++)
+        for (var i = 0; i <= length; i++)
         {
-            // 徐々に表示文字数を増やしていく
             _text.maxVisibleCharacters = i;
-
-            // 一定時間待機
             yield return delay;
         }
-
-        // 演出が終わったら全ての文字を表示する
-        _text.maxVisibleCharacters = length;
 
         _showCoroutine = null;
     }
