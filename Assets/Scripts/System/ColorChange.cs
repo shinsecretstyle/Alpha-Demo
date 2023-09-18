@@ -20,8 +20,11 @@ public class ColorChange : MonoBehaviour
         
     }
     private void OnNotesKey() {
-        StartCoroutine("HitColor");
-        SE.PlayOneShot(sound1);
+        if (SystemStatus.IsPaused == false)
+        {
+            StartCoroutine("HitColor");
+            SE.PlayOneShot(sound1);
+        }
     }
     IEnumerator HitColor()
     {
