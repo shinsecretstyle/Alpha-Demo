@@ -56,32 +56,34 @@ public class AttackMaker : MonoBehaviour
 
     private void OnAttackRange1()
     {
-        if (canAttack)
-        {
-            ResetCD();
-            AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
-            Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            Queen.id++;
-            if (HasGamepad)
-            {
-                StartCoroutine(Vibration(0.1f, 0));
-            }
-        }
+        //if (canAttack)
+        //{
+        //    ResetCD();
+        //    AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
+        //    Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        //    Queen.id++;
+        //    if (HasGamepad)
+        //    {
+        //        StartCoroutine(Vibration(0.1f, 0));
+        //    }
+        //}
+        SystemStatus.isAttackUp = !SystemStatus.isAttackUp;
 
     }
     private void OnAttackRange2()
     {
-        if (canAttack)
-        {
-            ResetCD();
-            AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
-            Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
-            Queen.id++;
-            if (HasGamepad)
-            {
-                StartCoroutine(Vibration(0.3f, 0.2f));
-            }
-        }
+        //if (canAttack)
+        //{
+        //    ResetCD();
+        //    AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
+        //    Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
+        //    Queen.id++;
+        //    if (HasGamepad)
+        //    {
+        //        StartCoroutine(Vibration(0.3f, 0.2f));
+        //    }
+        //}
+        SystemStatus.isAttackUp = !SystemStatus.isAttackUp;
     }
 
     // Update is called once per frame
@@ -102,14 +104,28 @@ public class AttackMaker : MonoBehaviour
         }
 
         //Auto Attack when finished 5 notes
-        if (TotalAttack == 5) {
-            Instantiate(TotalAttacks, TotalAttacksPoint.position, new Quaternion(0f, 0f, 0f, 0f));
+        if (TotalAttack == 1) {
+            if (!SystemStatus.isAttackUp)//Air Attack
+            {
+                Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));
+                AudioSource.PlayClipAtPoint(Range1SE, MainCamera.position);
+                if (HasGamepad)
+                {
+                    StartCoroutine(Vibration(0.1f, 0.2f));
+                }
+            }
+            else//Land Attack
+            {
+                Instantiate(AttackRange2, AttackRange2Point.position, new Quaternion(0f, 0f, 0f, 0f));
+                AudioSource.PlayClipAtPoint(Range2SE, MainCamera.position);
+                if (HasGamepad)
+                {
+                    StartCoroutine(Vibration(0.4f, 0.6f));
+                }
+            }
             Queen.id++;
             TotalAttack = 0;
-            if (HasGamepad)
-            {
-                StartCoroutine(Vibration(0.1f, 0.2f));
-            }
+            
         }
 
         if(SystemStatus.IsPaused == false)

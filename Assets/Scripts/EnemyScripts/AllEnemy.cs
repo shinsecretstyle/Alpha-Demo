@@ -53,7 +53,7 @@ public class AllEnemy : MonoBehaviour
     //HeavyKnightEnemy Setting
     public static class HeavyKnightEnemy
     {
-        public static int MaxHP = 50;
+        public static int MaxHP = 30;
         public static int Speed = 60;
         public static int ATK = 10;
         public static float CD = 3f;
