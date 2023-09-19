@@ -14,14 +14,21 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (BuffController.KingsPower)
+        {
+            bouns = 1;
+            
+        }
+
+        if(BuffController.OutlineCollapse)
+        {
+            bouns = 1;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BuffController.KingsPower) {
-            bouns = 1;
-        }
+        
     }
 }

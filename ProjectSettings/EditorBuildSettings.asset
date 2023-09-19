@@ -41,5 +41,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/B1W3.unity
     guid: c0a69f6c304eb0046afa4d40e80d382a
+  - enabled: 1
+    path: Assets/Scenes/Buff.unity
+    guid: 13f05d228361f0a45bd708d9fd307bcd
+  - enabled: 1
+    path: Assets/Scenes/Buff2.unity
+    guid: 8b94fd002b0a66f47b16b8bc3650ca22
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4ddea9fd918d79e41881087ad9791f78, type: 2}
