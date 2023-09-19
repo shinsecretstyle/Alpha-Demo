@@ -24,6 +24,12 @@ public class NoteObject : MonoBehaviour
     public AudioClip Good;
     public AudioClip OK;
 
+    public GameObject Perfecttext;
+    public GameObject Goodtext;
+    public GameObject OKtext;
+
+    public Transform textpoint;
+
     Transform MainCamera;
 
     // Start is called before the first frame update
@@ -52,6 +58,7 @@ public class NoteObject : MonoBehaviour
                     HK.result += 1;
                     Debug.Log("Perfect" + HK.result);
                     AttackMaker.TotalAttack += 1;
+                    Instantiate(Perfecttext,textpoint.transform);
                 }
                 else if(Goal < 30 && Goal >= 10)
                 {
@@ -61,6 +68,7 @@ public class NoteObject : MonoBehaviour
                     HK.result += 1;
                     Debug.Log("Good" + HK.result);
                     AttackMaker.TotalAttack += 1;
+                    Instantiate(Goodtext,textpoint.transform);
                 }
                 else if (Goal < 10 && Goal >= 5)
                 {
@@ -70,6 +78,7 @@ public class NoteObject : MonoBehaviour
                     HK.result += 1;
                     Debug.Log("ok" + HK.result);
                     AttackMaker.TotalAttack += 1;
+                    Instantiate(OKtext,textpoint.transform);
                 }
                 else if (Goal < 5)
                 {
