@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 6409659335710683414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.4, y: 1.98, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.6, y: 1.2, z: 1.1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662764379819654275}
   m_RootOrder: 0
@@ -199,35 +199,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 0.8235922
+      value: -4.029767
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 1.8140984
+      value: 12.26116
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -3.5928884
+      value: -12.477003
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -1.1267651
+      value: -2.689712
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 2.0868502
+      value: 22.816452
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -1.1861033
+      value: -4.8055587
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 4.134713
+      value: 25.686916
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 1.8698668
+      value: 11.000761
       objectReference: {fileID: 0}
     - target: {fileID: 4041968642736591102, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533516063067262135, guid: c88eed5e1a675c7469523f241d42617b, type: 3}
       propertyPath: m_TagString
-      value: AttackRange1
+      value: AttackRange3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88eed5e1a675c7469523f241d42617b, type: 3}

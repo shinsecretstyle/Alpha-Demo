@@ -9,19 +9,26 @@ public class Attack : MonoBehaviour
     public static int AttackRange1 = 4 + bouns;
     public static int AttackRange2 = 4 + bouns;
     public static int AttackRange3 = 4;
-    public static int AttackRange4 = 2;
+    public static int AttackRange4 = 999;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (BuffController.KingsPower)
+        {
+            bouns = 1;
+            
+        }
+
+        if(BuffController.OutlineCollapse)
+        {
+            bouns = 1;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BuffController.KingsPower) {
-            bouns = 1;
-        }
+        
     }
 }
