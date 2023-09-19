@@ -142,6 +142,10 @@ MonoBehaviour:
   Perfect: {fileID: 8300000, guid: abcb9ed7d2f5b3c4b8a339ad0c67c9ef, type: 3}
   Good: {fileID: 8300000, guid: ccf941ee15f73c74a89c09155b54b99f, type: 3}
   OK: {fileID: 8300000, guid: 9c8ac30b745c3cb45bc2c1c8d6d0f166, type: 3}
+  Perfecttext: {fileID: 60663721329392220, guid: 4b377bb9a449def4789eaac5a4895d78, type: 3}
+  Goodtext: {fileID: 5427144431375386486, guid: ea76d5f12178c65478155bee8d8aec4c, type: 3}
+  OKtext: {fileID: 692802478350376230, guid: 0a8ed5308bb31254c932bdf8030f28df, type: 3}
+  textpoint: {fileID: 0}
 --- !u!114 &1710438987754786147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81541cd266553d43919b6c44e3c36cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 4900000, guid: d764468524c3dfa419563f8f63c0b3c4, type: 3}
   beatFallSpeed: 0
   isStarted: 0
 --- !u!82 &-5163604809843786637
