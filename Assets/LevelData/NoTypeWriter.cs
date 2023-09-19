@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement; // シーンの切り替えに必要な名前空間
 using System.Collections;
 
-public class TypeWriter : MonoBehaviour
+public class NoTypeWriter : MonoBehaviour
 {
     public Text textObject; // Text (Legacy) コンポーネントへの参照
     public Text newMessageObject; // 新しいメッセージを表示する Text コンポーネントへの参照
