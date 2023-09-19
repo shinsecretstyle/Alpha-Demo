@@ -18,7 +18,7 @@ public class TypeWriter : MonoBehaviour
 
     public void StartTyping()
     {
-        displayText = "…へ、っ…？　…ふぅん……？　そ、そうなんだ……。　…。　…え、っと！　ぼくにして欲しいこととか…ある？\n（正しい返答ができたようだ…） "; // 表示したいテキストを設定
+        displayText = "…へ、っ…？　…ふぅん……？　そ、そうなんだ…。…え、っと！ ぼくにして欲しいこととか…ある？\n                  （正しい返答ができたようだ…） "; // 表示したいテキストを設定
         currentCharIndex = 0;
         StartCoroutine(ShowCoroutine());
     }
