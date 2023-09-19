@@ -28,7 +28,7 @@ public class NoteObject : MonoBehaviour
     public GameObject Goodtext;
     public GameObject OKtext;
 
-    public Transform textpoint;
+    Transform textpoint;
 
     Transform MainCamera;
 
@@ -41,6 +41,7 @@ public class NoteObject : MonoBehaviour
 
         Pressed = false;
         MainCamera = GameObject.Find("Main Camera").transform;
+        textpoint = GameObject.Find("textpoint").transform;
     }
 
     // Update is called once per frame
