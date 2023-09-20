@@ -44,6 +44,6 @@ public class NoTypeWriter : MonoBehaviour
 
         // シーンを切り替える
         yield return new WaitForSeconds(2.0f); // 2秒待つ
-        SceneManager.LoadScene("Love success"); // 次のシーンの名前に切り替えるシーン名を指定
+        SceneManager.LoadScene("Buff"); // 次のシーンの名前に切り替えるシーン名を指定
     }
 }
