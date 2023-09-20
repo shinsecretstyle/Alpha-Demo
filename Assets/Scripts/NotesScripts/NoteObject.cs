@@ -27,6 +27,7 @@ public class NoteObject : MonoBehaviour
     public GameObject Perfecttext;
     public GameObject Goodtext;
     public GameObject OKtext;
+    public GameObject Badtext;
 
     Transform textpoint;
 
@@ -92,6 +93,7 @@ public class NoteObject : MonoBehaviour
                     if (BuffController.PraiseOfPain)
                     {
                         AttackMaker.SpecialAttack = 0;
+                        Instantiate(Badtext, textpoint.transform);
                     }
                 }
                 
@@ -118,6 +120,8 @@ public class NoteObject : MonoBehaviour
                     //Debug.Log("Perfect");
                     HK.result += 1;
                     AttackMaker.TotalAttack += 1;
+                    AttackMaker.SpecialAttack += 1;
+                    Instantiate(Perfecttext, textpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
                 {
@@ -126,6 +130,8 @@ public class NoteObject : MonoBehaviour
                     Scores.Point += 2;
                     HK.result += 1;
                     AttackMaker.TotalAttack += 1;
+                    AttackMaker.SpecialAttack += 1;
+                    Instantiate(Goodtext, textpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
                 {
@@ -134,6 +140,8 @@ public class NoteObject : MonoBehaviour
                     Scores.Point += 1;
                     HK.result += 1;
                     AttackMaker.TotalAttack += 1;
+                    AttackMaker.SpecialAttack += 1;
+                    Instantiate(OKtext, textpoint.transform);
                 }
                 Pressed = true;
 
@@ -165,6 +173,7 @@ public class NoteObject : MonoBehaviour
             {
                 Scores.Point -= 1;
                 HK.result = 0;
+                Instantiate(Badtext, textpoint.transform);
             }
             Destroy(gameObject);
         }

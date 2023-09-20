@@ -46,6 +46,8 @@ public class AttackMaker : MonoBehaviour
 
     public GameObject SA4;
     public GameObject PauseMenu;
+
+    private bool end = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -172,7 +174,7 @@ public class AttackMaker : MonoBehaviour
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 6;
                 Instantiate(SA1, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-                Debug.Log("1");
+                //Debug.Log("1");
                 SpecialAttack = 0;
             }
             
@@ -182,24 +184,25 @@ public class AttackMaker : MonoBehaviour
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 2;
                 Instantiate(SA2, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-                Debug.Log("2");
+                //Debug.Log("2");
                 SpecialAttack = 0;
             }
         }
-        if (!BuffController.ChildishEmbrace) {
+        if (BuffController.ChildishEmbrace) {
             if (SpecialAttack == 5)
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 4;
                 Instantiate(SA3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
-                Debug.Log("3");
+                //Debug.Log("3");
                 SpecialAttack = 0;
             }
         }
 
-        if(GameController.GameClear == 1)
+        if(GameController.GameClear == 1&& !end)
         {
             BuffController.Resetall();
             Instantiate(SA4, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            end = true;
         }
 
     }

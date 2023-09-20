@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 101567868}
-  - component: {fileID: 101567867}
+  - component: {fileID: 101567869}
   m_Layer: 0
   m_Name: BuffController
   m_TagString: Untagged
@@ -140,19 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &101567867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101567866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d825917cb5e993c44bffb9b07ab8bde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: {fileID: 0}
 --- !u!4 &101567868
 Transform:
   m_ObjectHideFlags: 0
@@ -168,6 +155,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101567869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101567866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d76f2f0855ed9b4384ded365a7e16b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: {fileID: 0}
 --- !u!1 &603563687
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 101567867}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+      - m_Target: {fileID: 101567869}
+        m_TargetAssemblyTypeName: BuffController2, Assembly-CSharp
         m_MethodName: setPraiseOfPain
         m_Mode: 1
         m_Arguments:
@@ -460,8 +460,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 101567867}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+      - m_Target: {fileID: 101567869}
+        m_TargetAssemblyTypeName: BuffController2, Assembly-CSharp
         m_MethodName: setChildishEmbrace
         m_Mode: 1
         m_Arguments:
@@ -755,8 +755,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 101567867}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+      - m_Target: {fileID: 101567869}
+        m_TargetAssemblyTypeName: BuffController2, Assembly-CSharp
         m_MethodName: setBlatantMalice
         m_Mode: 1
         m_Arguments:

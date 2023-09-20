@@ -1707,7 +1707,7 @@ MonoBehaviour:
   AttackRange1Point: {fileID: 275253159}
   AttackRange2: {fileID: 4967199852295673324, guid: 6199fc51f9f2c46468a5f8564ae5bed4, type: 3}
   AttackRange2Point: {fileID: 269823861}
-  AttackRange3Point: {fileID: 0}
+  AttackRange3Point: {fileID: 1965330836}
   TotalAttacks: {fileID: 7030360133386555928, guid: 655062cedcb74c94881fd162c044deb7, type: 3}
   TotalAttacksPoint: {fileID: 741460097}
   Range1SE: {fileID: 8300000, guid: ccfd823c441ac7d438af966835b25c38, type: 3}
@@ -4219,7 +4219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965330835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4651835, y: 0.06524992, z: 0}
+  m_LocalPosition: {x: 0.2, y: 3.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
