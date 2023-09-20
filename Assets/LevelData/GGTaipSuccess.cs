@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement; // シーンの切り替えに必要な名前空間
 using System.Collections;
 
-public class NoTypeWriter : MonoBehaviour
+public class GGTaipSuccess : MonoBehaviour
 {
     public Text textObject; // Text (Legacy) コンポーネントへの参照
     public Text newMessageObject; // 新しいメッセージを表示する Text コンポーネントへの参照
@@ -22,7 +22,7 @@ public class NoTypeWriter : MonoBehaviour
 
     public void StartTyping()
     {
-        displayText = "君の魂胆なんてわかってるからな！　でも…まぁ？\nべつに？　もーすこしだけ頑張ってあげても\n…まぁ…いいけど…\n                     （返答を間違えたようだ…）"; // 表示したいテキストを設定
+        displayText = "あああもう!!! 変な期待して損した!!・・・まあいいさ、\nこれも君 が提供してくれた余興だと思うことにするよ。\nほら、さっさと敵を倒すぞ!!\n                         （返答を間違えたようだ…） "; // 表示したいテキストを設定
         currentCharIndex = 0;
         StartCoroutine(ShowCoroutine());
     }
@@ -44,6 +44,6 @@ public class NoTypeWriter : MonoBehaviour
 
         // シーンを切り替える
         yield return new WaitForSeconds(2.0f); // 2秒待つ
-        SceneManager.LoadScene("Buff2"); // 次のシーンの名前に切り替えるシーン名を指定
+        SceneManager.LoadScene("Buff4"); // 次のシーンの名前に切り替えるシーン名を指定
     }
 }
