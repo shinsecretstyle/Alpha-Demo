@@ -212,7 +212,7 @@ MonoBehaviour:
   NowNotes: 0
   totalTime: 0
   beginningTime: 0
-  textJSON: {fileID: 4900000, guid: 54a08bd92da3e4340908cff3b117e700, type: 3}
+  textJSON: {fileID: 4900000, guid: 19df5372d1c27824081ba1a5ae14bef4, type: 3}
   NextScene: 
   myNotesList:
     MusicTotalTime: 0

@@ -288,7 +288,7 @@ MonoBehaviour:
   NowNotes: 0
   totalTime: 0
   beginningTime: 0
-  textJSON: {fileID: 4900000, guid: 826206a6bc803684391c230bf0b5e6a1, type: 3}
+  textJSON: {fileID: 4900000, guid: 389b92bda21b3b94c95feb80b51659d6, type: 3}
   NextScene: 
   myNotesList:
     MusicTotalTime: 0
@@ -592,6 +592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a: {fileID: 186082714}
+  CanvasPlus: {fileID: 0}
+  timer: 3
+  CanTimer: 0
 --- !u!1 &230479382
 GameObject:
   m_ObjectHideFlags: 0
