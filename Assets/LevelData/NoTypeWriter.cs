@@ -22,7 +22,7 @@ public class NoTypeWriter : MonoBehaviour
 
     public void StartTyping()
     {
-        displayText = "…へ、っ…？　…ふぅん……？　そ、そうなんだ…。…え、っと！ ぼくにして欲しいこととか…ある？\n                  （正しい返答ができたようだ…） "; // 表示したいテキストを設定
+        displayText = "君の魂胆なんてわかってるからな！　でも…まぁ？\nべつに？　もーすこしだけ頑張ってあげても\n…まぁ…いいけど…\n                     （返答を間違えたようだ…）"; // 表示したいテキストを設定
         currentCharIndex = 0;
         StartCoroutine(ShowCoroutine());
     }
