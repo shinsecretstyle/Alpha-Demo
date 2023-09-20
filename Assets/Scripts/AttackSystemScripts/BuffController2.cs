@@ -22,6 +22,12 @@ public class BuffController2 : MonoBehaviour
 
     public static bool OutlineCollapse = false;//—ÖŠs’×•ö  —^ƒ_ƒ[ƒW‚Ì‚R‚O“‚Ìƒ_ƒ[ƒW‚ğ‚T•bŠÔŒp‘±‚µ‚Ä—^‚¦‚é
 
+
+    public GameObject CanvasPlus;
+
+    public float timer = 3f;
+
+    public bool CanTimer = false;
     //Debuff
 
 
@@ -35,7 +41,15 @@ public class BuffController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CanTimer)
+        {
+            timer -= Time.deltaTime;
+        }
 
+        if (timer < 0)
+        {
+            SceneManager.LoadScene("B1W3");
+        }
     }
     public void setKingsPower()
     {
@@ -55,17 +69,23 @@ public class BuffController2 : MonoBehaviour
     public void setPraiseOfPain()
     {
         PraiseOfPain = true;
-        SceneManager.LoadScene("B1W3");
+        Instantiate(CanvasPlus);
+        CanTimer = true;
+        //SceneManager.LoadScene("B1W2");
     }
     public void setBlatantMalice()
     {
         BlatantMalice = true;
-        SceneManager.LoadScene("B1W3");
+        Instantiate(CanvasPlus);
+        CanTimer = true;
+        //SceneManager.LoadScene("B1W2");
     }
     public void setChildishEmbrace()
     {
         ChildishEmbrace = true;
-        SceneManager.LoadScene("B1W3");
+        Instantiate(CanvasPlus);
+        CanTimer = true;
+        //SceneManager.LoadScene("B1W2");
     }
     public static void Resetall()
     {
@@ -73,7 +93,7 @@ public class BuffController2 : MonoBehaviour
         CuteAggression = false;
         OutlineCollapse = false;
         PraiseOfPain = false;
-        BlatantMalice= false;
+        BlatantMalice = false;
         ChildishEmbrace = false;
     }
 

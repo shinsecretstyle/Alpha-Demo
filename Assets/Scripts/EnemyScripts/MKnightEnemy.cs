@@ -53,7 +53,7 @@ public class MKnightEnemy : MonoBehaviour
         CanMove = true;
         CanAttack = false;
         Speed = AllEnemy.NormalEnemy.Speed;
-        AttackCD = AllEnemy.NormalEnemy.Speed;
+        AttackCD = AllEnemy.NormalEnemy.CD;
         AttackCDisOk = true;
         CanAttackFence1 = false;
         CanAttackFence2 = false;

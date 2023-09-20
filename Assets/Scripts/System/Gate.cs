@@ -18,9 +18,9 @@ public class Gate : MonoBehaviour
     {
         HpSlider.value = 1;
 
-        MaxHP = 50;
+        MaxHP = 100;
 
-        HP = 50;
+        HP = 100;
     }
 
     // Update is called once per frame

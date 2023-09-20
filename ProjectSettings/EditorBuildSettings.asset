@@ -20,12 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lovetime.unity
     guid: df0f2d236a17d2b4687c54f82b03f28c
-  - enabled: 0
-    path: Assets/Scenes/Love success.unity
-    guid: c363c2c7f3f3cfe44b9b2948a4eb96aa
-  - enabled: 0
-    path: Assets/Scenes/Love failure.unity
-    guid: d26aa0d0f808dbe4e903c617df3cb158
+  - enabled: 1
+    path: Assets/Scenes/Buff.unity
+    guid: 13f05d228361f0a45bd708d9fd307bcd
+  - enabled: 1
+    path: Assets/Scenes/Buff2.unity
+    guid: 8b94fd002b0a66f47b16b8bc3650ca22
   - enabled: 1
     path: Assets/Scenes/B1W2.unity
     guid: 28b500c0745855e49a7e0543789d40a9
@@ -42,13 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/B1W3.unity
     guid: c0a69f6c304eb0046afa4d40e80d382a
   - enabled: 1
-    path: Assets/Scenes/Buff.unity
-    guid: 13f05d228361f0a45bd708d9fd307bcd
-  - enabled: 1
-    path: Assets/Scenes/Buff2.unity
-    guid: 8b94fd002b0a66f47b16b8bc3650ca22
-  - enabled: 1
-    path: Assets/Scenes/GameClear.unity
+    path: Assets/Scenes/Lovetime3.unity
     guid: b0ded4a57ebc78642be22bff13715e44
   - enabled: 1
     path: Assets/Scenes/GameOver.unity

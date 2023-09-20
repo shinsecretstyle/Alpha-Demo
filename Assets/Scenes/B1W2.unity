@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 8304755531086354462, guid: e3756ba8215a2b447b84308b80a8c499, type: 3}
-  Enemy2: {fileID: 5948590326282430301, guid: f2cbede0abc92eb44b8543258e3c2412, type: 3}
-  Enemy3: {fileID: 3341170327586628994, guid: 9de1e6c425237644a8e8caba272241a2, type: 3}
+  Enemy2: {fileID: 3341170327586628994, guid: 9de1e6c425237644a8e8caba272241a2, type: 3}
+  Enemy3: {fileID: 4905751329528811262, guid: b3885118f86ac4248b7af166629d870e, type: 3}
   Enemy4: {fileID: 0}
   Enemy5: {fileID: 0}
   Enemy6: {fileID: 0}

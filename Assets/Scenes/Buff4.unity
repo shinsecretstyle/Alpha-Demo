@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a: {fileID: 0}
+  CanvasPlus: {fileID: 6519987061343466247, guid: 6468976949b9ed54c868fc91d4b71fcd, type: 3}
+  timer: 3
+  CanTimer: 0
 --- !u!1 &603563687
 GameObject:
   m_ObjectHideFlags: 0

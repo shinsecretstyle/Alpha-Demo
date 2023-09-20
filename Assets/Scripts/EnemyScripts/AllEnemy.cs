@@ -14,7 +14,7 @@ public class AllEnemy : MonoBehaviour
     public static class NormalEnemy
     {
 
-        public static int MaxHP = 12;
+        public static int MaxHP = 18;
         public static int Speed = 90;
         public static int ATK = 2;
         public static float CD = 2f;
@@ -25,7 +25,7 @@ public class AllEnemy : MonoBehaviour
     public static class MKnightEnemy
     {
 
-        public static int MaxHP = 20;
+        public static int MaxHP = 24;
         public static int Speed = 70;
         public static int ATK = 3;
         public static float CD = 3f;
@@ -35,7 +35,7 @@ public class AllEnemy : MonoBehaviour
     //DestructKnightEnemy Setting
     public static class DestructKnightEnemy
     {
-        public static int MaxHP = 30;
+        public static int MaxHP = 28;
         public static int Speed = 60;
         public static int ATK = 8;
         public static float CD = 4f;
@@ -63,8 +63,8 @@ public class AllEnemy : MonoBehaviour
     //BossEnemy Setting
     public static class BossEnemy
     {
-        public static int MaxHP = 250;
-        public static int Speed = 20;
+        public static int MaxHP = 500;
+        public static int Speed = 40;
         public static int ATK = 15;
         public static float CD = 4f;
     }
