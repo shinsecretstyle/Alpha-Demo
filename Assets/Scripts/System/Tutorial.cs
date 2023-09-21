@@ -45,17 +45,17 @@ public class Tutorial : MonoBehaviour
         }
         if (id == 4)
         {
-            theSR.sprite = Image4;
+            theSR.sprite = Image6;
         }
-        if (id == 5)
+        if (id == 55)
         {
             theSR.sprite = Image5;
         }
-        if (id == 6)
+        if (id == 56)
         {
             theSR.sprite = Image6;
         }
-        if (id == 7)
+        if (id == 5)
         {
             SceneManager.LoadScene("B1W1");
         }

@@ -52,7 +52,8 @@ public class AttackMaker : MonoBehaviour
     void Start()
     {
         theAS = GetComponent<AudioSource>();
-
+        TotalAttack = 0;
+        
         MainCamera = GameObject.Find("Main Camera").transform;
 
         if (Gamepad.current != null)
@@ -94,6 +95,7 @@ public class AttackMaker : MonoBehaviour
         //    }
         //}
         SystemStatus.isAttackUp = !SystemStatus.isAttackUp;
+        
     }
 
     // Update is called once per frame
@@ -114,7 +116,7 @@ public class AttackMaker : MonoBehaviour
         }
 
         //Auto Attack when finished 5 notes
-        if (TotalAttack == 1) {
+        if (TotalAttack !=0) {
             if (!SystemStatus.isAttackUp)//Air Attack
             {
                 Instantiate(AttackRange1, AttackRange1Point.position, new Quaternion(0f, 0f, 0f, 0f));

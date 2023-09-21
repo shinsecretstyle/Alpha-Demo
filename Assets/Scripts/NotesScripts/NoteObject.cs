@@ -121,6 +121,7 @@ public class NoteObject : MonoBehaviour
                     HK.result += 1;
                     AttackMaker.TotalAttack += 1;
                     AttackMaker.SpecialAttack += 1;
+                   
                     Instantiate(Perfecttext, textpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
@@ -145,7 +146,7 @@ public class NoteObject : MonoBehaviour
                 }
                 Pressed = true;
 
-
+                Debug.Log(AttackMaker.TotalAttack + "adadsdadas");
 
                 Destroy(gameObject);
 
@@ -174,6 +175,7 @@ public class NoteObject : MonoBehaviour
                 Scores.Point -= 1;
                 HK.result = 0;
                 Instantiate(Badtext, textpoint.transform);
+                //Debug.Log(AttackMaker.TotalAttack +"fffffffff");
             }
             Destroy(gameObject);
         }
