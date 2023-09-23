@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class NoteObject : MonoBehaviour
 {
-
+    public static string from;
     private SpriteRenderer theSR;
     public Sprite DefaultImage;
     public Sprite PressedImage;
@@ -49,55 +49,58 @@ public class NoteObject : MonoBehaviour
     void Update()
     {
         if (GameMode.Mode == "AttackOnly") {
-            if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.05)
-            {
-                float Goal = UnityEngine.Random.Range(0, 100);
-                if (Goal >= 30)
+
+            if (canBePressed) {
+                if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.05)
                 {
-                    AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
-                    Scores.Point += 4;
-                    //Debug.Log("Perfect");
-                    HK.result += 1;
-                    Debug.Log("Perfect" + HK.result);
-                    AttackMaker.TotalAttack += 1;
-                    AttackMaker.SpecialAttack += 1;
-                    Instantiate(Perfecttext,textpoint.transform);
-                }
-                else if(Goal < 30 && Goal >= 10)
-                {
-                    AudioSource.PlayClipAtPoint(Good, MainCamera.position);
-                    //Debug.Log("Good");
-                    Scores.Point += 2;
-                    HK.result += 1;
-                    Debug.Log("Good" + HK.result);
-                    AttackMaker.TotalAttack += 1;
-                    AttackMaker.SpecialAttack += 1;
-                    Instantiate(Goodtext,textpoint.transform);
-                }
-                else if (Goal < 10 && Goal >= 5)
-                {
-                    AudioSource.PlayClipAtPoint(OK, MainCamera.position);
-                    //Debug.Log("ok");
-                    Scores.Point += 1;
-                    HK.result += 1;
-                    Debug.Log("ok" + HK.result);
-                    AttackMaker.TotalAttack += 1;
-                    AttackMaker.SpecialAttack += 1;
-                    Instantiate(OKtext,textpoint.transform);
-                }
-                else if (Goal < 5)
-                {
-                    Scores.Point -= 1;
-                    HK.result = 0;
-                    Debug.Log("miss");
-                    if (BuffController.PraiseOfPain)
+                    float Goal = UnityEngine.Random.Range(0, 100);
+                    if (Goal >= 30)
                     {
-                        AttackMaker.SpecialAttack = 0;
-                        Instantiate(Badtext, textpoint.transform);
+                        AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
+                        Scores.Point += 4;
+                        //Debug.Log("Perfect");
+                        HK.result += 1;
+                        Debug.Log("Perfect" + HK.result);
+                        AttackMaker.TotalAttack += 1;
+                        AttackMaker.SpecialAttack += 1;
+                        Instantiate(Perfecttext, textpoint.transform);
                     }
+                    else if (Goal < 30 && Goal >= 10)
+                    {
+                        AudioSource.PlayClipAtPoint(Good, MainCamera.position);
+                        //Debug.Log("Good");
+                        Scores.Point += 2;
+                        HK.result += 1;
+                        Debug.Log("Good" + HK.result);
+                        AttackMaker.TotalAttack += 1;
+                        AttackMaker.SpecialAttack += 1;
+                        Instantiate(Goodtext, textpoint.transform);
+                    }
+                    else if (Goal < 10 && Goal >= 5)
+                    {
+                        AudioSource.PlayClipAtPoint(OK, MainCamera.position);
+                        //Debug.Log("ok");
+                        Scores.Point += 1;
+                        HK.result += 1;
+                        Debug.Log("ok" + HK.result);
+                        AttackMaker.TotalAttack += 1;
+                        AttackMaker.SpecialAttack += 1;
+                        Instantiate(OKtext, textpoint.transform);
+                    }
+                    else if (Goal < 5)
+                    {
+                        Scores.Point -= 1;
+                        HK.result = 0;
+                        Debug.Log("miss");
+                        if (BuffController.PraiseOfPain)
+                        {
+                            AttackMaker.SpecialAttack = 0;
+                            Instantiate(Badtext, textpoint.transform);
+                        }
+                    }
+                    Destroy(gameObject);
                 }
-                
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }
@@ -113,7 +116,7 @@ public class NoteObject : MonoBehaviour
                 //theSR.sprite = PressedImage;
 
 
-                if (Mathf.Abs(gameObject.transform.position.x - 0) < 0.1)
+                if (Mathf.Abs(gameObject.transform.position.x - 0) <= 0.1)
                 {
                     AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                     Scores.Point += 4;
@@ -124,7 +127,7 @@ public class NoteObject : MonoBehaviour
                    
                     Instantiate(Perfecttext, textpoint.transform);
                 }
-                if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) < 0.2)
+                if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) <= 0.3)
                 {
                     AudioSource.PlayClipAtPoint(Good, MainCamera.position);
                     //Debug.Log("Good");
@@ -134,7 +137,7 @@ public class NoteObject : MonoBehaviour
                     AttackMaker.SpecialAttack += 1;
                     Instantiate(Goodtext, textpoint.transform);
                 }
-                if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.2)
+                if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.3 && Mathf.Abs(gameObject.transform.position.x - 0) <= 0.5)
                 {
                     AudioSource.PlayClipAtPoint(OK, MainCamera.position);
                     //Debug.Log("ok");
@@ -143,6 +146,15 @@ public class NoteObject : MonoBehaviour
                     AttackMaker.TotalAttack += 1;
                     AttackMaker.SpecialAttack += 1;
                     Instantiate(OKtext, textpoint.transform);
+                }
+                if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.5)
+                {
+                    
+                    //Debug.Log("ok");
+                    Scores.Point -= 1;
+                    HK.result = 0;
+                    
+                    Instantiate(Badtext, textpoint.transform);
                 }
                 Pressed = true;
 
@@ -157,7 +169,11 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Activator")
+        if (other.tag == "NotesLeft" && GetComponent<BeatScroller>().beatFallSpeed < 0)
+        {
+            canBePressed = true;
+        }
+        if (other.tag == "NotesRight" && GetComponent<BeatScroller>().beatFallSpeed > 0)
         {
             canBePressed = true;
         }
@@ -165,9 +181,10 @@ public class NoteObject : MonoBehaviour
     }
 
 
+
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Activator")
+        if (other.tag == "NotesLeft" && GetComponent<BeatScroller>().beatFallSpeed < 0)
         {
             canBePressed = false;
             if (Pressed == false && GameMode.Mode != "AttackOnly")
@@ -179,5 +196,18 @@ public class NoteObject : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        if (other.tag == "NotesRight" && GetComponent<BeatScroller>().beatFallSpeed > 0)
+        {
+            canBePressed = false;
+            if (Pressed == false && GameMode.Mode != "AttackOnly")
+            {
+                Scores.Point -= 1;
+                HK.result = 0;
+                Instantiate(Badtext, textpoint.transform);
+                //Debug.Log(AttackMaker.TotalAttack +"fffffffff");
+            }
+            Destroy(gameObject);
+        }
+
     }
 }

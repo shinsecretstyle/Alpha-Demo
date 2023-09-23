@@ -53,36 +53,36 @@ public class BuffController2 : MonoBehaviour
     }
     public void setKingsPower()
     {
-        KingsPower = true;
+        BuffController.KingsPower = true;
         SceneManager.LoadScene("Buff4");
     }
     public void setCuteAggression()
     {
-        CuteAggression = true;
+        BuffController.CuteAggression = true;
         SceneManager.LoadScene("Buff4");
     }
     public void setOutlineCollapse()
     {
-        OutlineCollapse = true;
+        BuffController.OutlineCollapse = true;
         SceneManager.LoadScene("Buff4");
     }
     public void setPraiseOfPain()
     {
-        PraiseOfPain = true;
+        BuffController.PraiseOfPain = true;
         Instantiate(CanvasPlus);
         CanTimer = true;
         //SceneManager.LoadScene("B1W2");
     }
     public void setBlatantMalice()
     {
-        BlatantMalice = true;
+        BuffController.BlatantMalice = true;
         Instantiate(CanvasPlus);
         CanTimer = true;
         //SceneManager.LoadScene("B1W2");
     }
     public void setChildishEmbrace()
     {
-        ChildishEmbrace = true;
+        BuffController.ChildishEmbrace = true;
         Instantiate(CanvasPlus);
         CanTimer = true;
         //SceneManager.LoadScene("B1W2");

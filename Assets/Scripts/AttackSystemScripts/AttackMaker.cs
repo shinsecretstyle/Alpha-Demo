@@ -13,6 +13,7 @@ public class AttackMaker : MonoBehaviour
     public Transform AttackRange2Point;
 
     public Transform AttackRange3Point;
+    public Transform AttackRange4Point;
 
     //auto attack
     public GameObject TotalAttacks;
@@ -172,7 +173,7 @@ public class AttackMaker : MonoBehaviour
 
 
         if (BuffController.PraiseOfPain) {
-            if(SpecialAttack == 5)
+            if(SpecialAttack >= 5)
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 6;
                 Instantiate(SA1, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
@@ -182,7 +183,7 @@ public class AttackMaker : MonoBehaviour
             
         }
         if (BuffController.BlatantMalice){
-            if (SpecialAttack == 2)
+            if (SpecialAttack >= 2)
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 2;
                 Instantiate(SA2, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
@@ -191,7 +192,7 @@ public class AttackMaker : MonoBehaviour
             }
         }
         if (BuffController.ChildishEmbrace) {
-            if (SpecialAttack == 5)
+            if (SpecialAttack >= 5)
             {
                 Attack.AttackRange3 = Attack.AttackRange1 * 4;
                 Instantiate(SA3, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
@@ -200,10 +201,10 @@ public class AttackMaker : MonoBehaviour
             }
         }
 
-        if(GameController.GameClear == 1&& !end)
+        if(GameController.GameClear == 1 && !end)
         {
             BuffController.Resetall();
-            Instantiate(SA4, AttackRange3Point.position, new Quaternion(0f, 0f, 0f, 0f));
+            Instantiate(SA4, AttackRange4Point.position, new Quaternion(0f, 0f, 0f, 0f));
             end = true;
         }
 

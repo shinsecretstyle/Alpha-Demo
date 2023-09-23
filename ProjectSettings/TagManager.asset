@@ -16,6 +16,8 @@ TagManager:
   - AttackRange3
   - AttackRange4
   - TotalAttack
+  - NotesLeft
+  - NotesRight
   layers:
   - Default
   - TransparentFX

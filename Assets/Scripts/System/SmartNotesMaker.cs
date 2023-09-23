@@ -166,6 +166,7 @@ public class SmartNotesMaker : MonoBehaviour
                 if (Gate.HP > 0)
                 {
                     GameController.GameClear = 1;
+                    BuffController.Resetall();
                     //SceneManager.LoadScene("Lovetime");
                 }
             }

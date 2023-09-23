@@ -8,7 +8,7 @@ public class StartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        BuffController.Resetall();
     }
 
     // Update is called once per frame
@@ -20,5 +20,6 @@ public class StartGame : MonoBehaviour
     private void OnPressAnyKey()
     {
         SceneManager.LoadScene("Tutorial");
+        
     }
 }

@@ -63,7 +63,7 @@ public class AllEnemy : MonoBehaviour
     //BossEnemy Setting
     public static class BossEnemy
     {
-        public static int MaxHP = 500;
+        public static int MaxHP = 1000;
         public static int Speed = 40;
         public static int ATK = 15;
         public static float CD = 4f;
