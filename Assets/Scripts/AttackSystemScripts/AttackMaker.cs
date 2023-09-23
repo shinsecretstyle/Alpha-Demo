@@ -54,7 +54,7 @@ public class AttackMaker : MonoBehaviour
     {
         theAS = GetComponent<AudioSource>();
         TotalAttack = 0;
-        
+        SpecialAttack = 0;
         MainCamera = GameObject.Find("Main Camera").transform;
 
         if (Gamepad.current != null)
