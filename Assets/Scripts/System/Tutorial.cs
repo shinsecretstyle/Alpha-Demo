@@ -18,8 +18,9 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scores.Point = 0;
         id = 1;
-        timer = 600f;
+        timer = 100f;
         theSR = GetComponent<SpriteRenderer>();
     }
 
@@ -58,6 +59,7 @@ public class Tutorial : MonoBehaviour
         if (id == 5)
         {
             SceneManager.LoadScene("B1W1");
+            
         }
 
     }
