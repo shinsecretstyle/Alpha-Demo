@@ -29,9 +29,15 @@ public class NoteObject : MonoBehaviour
     public GameObject OKtext;
     public GameObject Badtext;
 
+    public GameObject PerfectSE;
+    public GameObject GoodSE;
+    public GameObject OKSE;
+
     Transform textpoint;
 
     Transform MainCamera;
+
+    Transform SEpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +49,7 @@ public class NoteObject : MonoBehaviour
         Pressed = false;
         MainCamera = GameObject.Find("Main Camera").transform;
         textpoint = GameObject.Find("textpoint").transform;
+        SEpoint = GameObject.Find("EndPoint").transform;
     }
 
     // Update is called once per frame
@@ -64,6 +71,7 @@ public class NoteObject : MonoBehaviour
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
                         Instantiate(Perfecttext, textpoint.transform);
+                        Instantiate(PerfectSE,SEpoint.transform);
                     }
                     else if (Goal < 30 && Goal >= 10)
                     {
@@ -75,6 +83,7 @@ public class NoteObject : MonoBehaviour
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
                         Instantiate(Goodtext, textpoint.transform);
+                        Instantiate(GoodSE, SEpoint.transform);
                     }
                     else if (Goal < 10 && Goal >= 5)
                     {
@@ -86,6 +95,7 @@ public class NoteObject : MonoBehaviour
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
                         Instantiate(OKtext, textpoint.transform);
+                        Instantiate(OKSE, SEpoint.transform);
                     }
                     else if (Goal < 5)
                     {
@@ -126,6 +136,7 @@ public class NoteObject : MonoBehaviour
                     AttackMaker.SpecialAttack += 1;
                    
                     Instantiate(Perfecttext, textpoint.transform);
+                    Instantiate(PerfectSE, SEpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.1 && Mathf.Abs(gameObject.transform.position.x - 0) <= 0.3)
                 {
@@ -136,6 +147,7 @@ public class NoteObject : MonoBehaviour
                     AttackMaker.TotalAttack += 1;
                     AttackMaker.SpecialAttack += 1;
                     Instantiate(Goodtext, textpoint.transform);
+                    Instantiate(GoodSE, SEpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.3 && Mathf.Abs(gameObject.transform.position.x - 0) <= 0.5)
                 {
@@ -146,6 +158,7 @@ public class NoteObject : MonoBehaviour
                     AttackMaker.TotalAttack += 1;
                     AttackMaker.SpecialAttack += 1;
                     Instantiate(OKtext, textpoint.transform);
+                    Instantiate(OKSE, SEpoint.transform);
                 }
                 if (Mathf.Abs(gameObject.transform.position.x - 0) > 0.5)
                 {

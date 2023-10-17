@@ -146,6 +146,9 @@ MonoBehaviour:
   Goodtext: {fileID: 5427144431375386486, guid: ea76d5f12178c65478155bee8d8aec4c, type: 3}
   OKtext: {fileID: 8254870950640188425, guid: f5939fe89b142394981267c869058aa1, type: 3}
   Badtext: {fileID: 692802478350376230, guid: 0a8ed5308bb31254c932bdf8030f28df, type: 3}
+  PerfectSE: {fileID: 8510774501656684859, guid: 4ef10221d016d79468f122452612ddf1, type: 3}
+  GoodSE: {fileID: 8510774501656684859, guid: bf3b46e10f60b72469d736f29014b1fe, type: 3}
+  OKSE: {fileID: 8510774501656684859, guid: 98739cfabb4ecac49ad67de49d0d3112, type: 3}
 --- !u!114 &8446071118424394863
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,8 +98,8 @@ public class SmartNotesMaker : MonoBehaviour
         PassingTime = myNotesList.MusicTotalTime;
 
         //一番目スライダーで移動時間をプラス
-        totalTime = myNotesList.MusicTotalTime + (RightspawnPoint.position.x-0) / (myNotesList.beatFallSpeed/60f);
-        
+        //totalTime = myNotesList.MusicTotalTime + (RightspawnPoint.position.x-0) / (myNotesList.beatFallSpeed/60f);
+        totalTime = myNotesList.MusicTotalTime;
         gaming = true;
 
         waitForQuit = 7f;
