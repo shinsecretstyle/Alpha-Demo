@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour
     public static int AttackRange1 = 4 + bouns;
     public static int AttackRange2 = 4 + bouns;
     public static int AttackRange3 = 4;
-    public static int AttackRange4 = 9999;
+    public static int AttackRange4 = 99999;
     
     // Start is called before the first frame update
     void Start()

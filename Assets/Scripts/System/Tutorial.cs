@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
+    Animator animator;
+
     private int id;
     public Sprite Image1;
     public Sprite Image2;
@@ -14,6 +17,8 @@ public class Tutorial : MonoBehaviour
     public Sprite Image6;
 
     private float timer;
+
+    bool isSwitched = false;
     private SpriteRenderer theSR;
     // Start is called before the first frame update
     void Start()
@@ -22,12 +27,18 @@ public class Tutorial : MonoBehaviour
         id = 1;
         timer = 100f;
         theSR = GetComponent<SpriteRenderer>();
+
+        GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
     }
 
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
+        if(timer < 99f && !isSwitched ) {
+            //wait 1s for fade in
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
+        }
         if (timer < 0)
         {
             SceneManager.LoadScene("Title");
@@ -58,8 +69,9 @@ public class Tutorial : MonoBehaviour
         }
         if (id == 5)
         {
-            SceneManager.LoadScene("B1W1");
-            
+            LoadNextScene();
+
+
         }
 
     }
@@ -69,6 +81,18 @@ public class Tutorial : MonoBehaviour
     }
     private void OnSkip()
     {
-        SceneManager.LoadScene("B1W1");
+        LoadNextScene();
     }
+    public void LoadNextScene()
+    {
+        StartCoroutine(LoadScenes(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadScenes(int SceneBuildIndex)
+    {
+        //animator.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneBuildIndex);
+    }
+
 }
