@@ -872,7 +872,7 @@ MonoBehaviour:
   newMessageObject: {fileID: 1940588855}
   initialDelay: 2
   newMessage: Wait a moment
-  delayDuration: 0.01
+  delayDuration: 0.1
 --- !u!1 &464807460
 GameObject:
   m_ObjectHideFlags: 0
