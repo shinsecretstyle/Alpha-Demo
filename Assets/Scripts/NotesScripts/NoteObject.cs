@@ -171,7 +171,7 @@ public class NoteObject : MonoBehaviour
                 }
                 Pressed = true;
 
-                Debug.Log(AttackMaker.TotalAttack + "adadsdadas");
+                //Debug.Log(AttackMaker.TotalAttack + "Total Attack one time");
 
                 Destroy(gameObject);
 

@@ -608,8 +608,8 @@ MonoBehaviour:
   Image1: {fileID: 21300000, guid: cf3a82f2f857de34cb41f8d0949fa8bb, type: 3}
   Image2: {fileID: 21300000, guid: 4216a52a8c691ca4f97181ec2a2f417a, type: 3}
   Image3: {fileID: 21300000, guid: 7342c4c2d0bc17544951ed61f64d85a2, type: 3}
-  Image4: {fileID: 21300000, guid: c1ce55be8f3eedf4ab6022379c677593, type: 3}
-  Image5: {fileID: 21300000, guid: 0a3f73bc298088845866133e013f1cce, type: 3}
+  Image4: {fileID: 21300000, guid: 4afbc1d20edc2e84c855b9a72e2d8caf, type: 3}
+  Image5: {fileID: 21300000, guid: e80baeb1809d5cd41801022947dc7a79, type: 3}
   Image6: {fileID: 21300000, guid: 3d7203525aaa41c4790372cca68ee12a, type: 3}
 --- !u!212 &1646551707
 SpriteRenderer:

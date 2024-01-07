@@ -27,6 +27,8 @@ public class Tutorial : MonoBehaviour
         id = 1;
         timer = 100f;
         theSR = GetComponent<SpriteRenderer>();
+        animator = GameObject.Find("CrossFade").GetComponent<Animator>();
+
 
         GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
     }
@@ -35,14 +37,31 @@ public class Tutorial : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+
         if(timer < 99f && !isSwitched ) {
             //wait 1s for fade in
             GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
         }
         if (timer < 0)
         {
-            SceneManager.LoadScene("Title");
+            returnToTitle();
         }
+
+        pageControll();
+
+    }
+    private void OnNextPage()
+    {
+        id++;
+    }
+    private void OnSkip()
+    {
+        FadeOut();
+        LoadNextScene();
+    }
+
+    private void pageControll()
+    {
         if (id == 1)
         {
             theSR.sprite = Image1;
@@ -57,32 +76,34 @@ public class Tutorial : MonoBehaviour
         }
         if (id == 4)
         {
-            theSR.sprite = Image6;
-        }
-        if (id == 55)
-        {
-            theSR.sprite = Image5;
-        }
-        if (id == 56)
-        {
-            theSR.sprite = Image6;
+            theSR.sprite = Image4;
         }
         if (id == 5)
         {
+            theSR.sprite = Image5;
+        }
+        if (id == 6)
+        {
+            theSR.sprite = Image6;
+        }
+        if (id == 7)
+        {
+            FadeOut();
             LoadNextScene();
 
-
         }
+    }
 
-    }
-    private void OnNextPage()
+    private void returnToTitle()
     {
-        id++;
+        SceneManager.LoadScene("Title");
     }
-    private void OnSkip()
+
+    private void FadeOut()
     {
-        LoadNextScene();
+        animator.SetTrigger("Start");
     }
+
     public void LoadNextScene()
     {
         StartCoroutine(LoadScenes(SceneManager.GetActiveScene().buildIndex + 1));
@@ -90,8 +111,7 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator LoadScenes(int SceneBuildIndex)
     {
-        //animator.SetTrigger("Start");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneBuildIndex);
     }
 
