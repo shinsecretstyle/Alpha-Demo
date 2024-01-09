@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -35,9 +36,14 @@ public class StartGame : MonoBehaviour
         }
     }
 
+    void OnQuit()
+    {
+        Application.Quit();
+
+    }
+
     private void OnPressAnyKey()
     {
-        //SceneManager.LoadScene("Tutorial");
         LoadNextScene();
         
     }

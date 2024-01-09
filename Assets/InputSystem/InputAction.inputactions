@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "6917dc72-e239-4a64-9412-e554c2ba832e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -580,17 +589,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e894e693-6e75-402d-85e2-376c95b58bf6",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "PressAnyKey",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "71662ef5-db14-4f5e-a48d-c4ed53be8426",
                     "path": "<DualShockGamepad>/buttonEast",
                     "interactions": "",
@@ -629,6 +627,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "PressAnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e33786df-77f8-49c0-aa40-0309f98ead55",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad",
+                    "action": "PressAnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ed9835a-2c11-4e28-b268-368b8981ad11",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "PressAnyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1598,6 +1618,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "AttackRange2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd84b9be-d3ea-43a2-bf69-aa6fa1332229",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
