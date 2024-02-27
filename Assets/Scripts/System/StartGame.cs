@@ -14,6 +14,7 @@ public class StartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         BuffController.Resetall();
         timer = 2f;
         animator = GameObject.Find("CrossFade").GetComponent<Animator>();

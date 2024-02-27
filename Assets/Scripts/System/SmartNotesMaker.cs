@@ -85,12 +85,10 @@ public class SmartNotesMaker : MonoBehaviour
     {
         GameController.GameClear = 0;
 
-        myNotesList = JsonUtility.FromJson<NotesList>(textJSON.text);
-        //JSONデータローディング
+        myNotesList = JsonUtility.FromJson<NotesList>(textJSON.text);//JSONデータローディング
 
-        StartedTime = DateTime.Now;
-        //始める時間　（獲得??）
-        
+        StartedTime = DateTime.Now;//始める時間
+
         TotalNotes = myNotesList.totalNotes;
 
         NowNotes = 0;
@@ -167,7 +165,6 @@ public class SmartNotesMaker : MonoBehaviour
                 {
                     GameController.GameClear = 1;
                     BuffController.Resetall();
-                    //SceneManager.LoadScene("Lovetime");
                 }
             }
         }

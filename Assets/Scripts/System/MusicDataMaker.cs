@@ -46,43 +46,6 @@ public class MusicDataMaker : MonoBehaviour
     void Update()
     {   
         PassingTime += Time.deltaTime;
-        //if (Input.GetKeyDown(KC))
-        //{
-
-        //    myNotesList.notes[id].id = id;
-
-        //    myNotesList.notes[id].times = PassingTime;
-
-        //    myNotesList.notes[id].type = UnityEngine.Random.Range(1, 5);
-
-        //    myNotesList.notes[id].hasSpawned = false;
-            
-        //    if (UnityEngine.Random.Range(0, 3) > 1)
-        //    {
-        //        myNotesList.notes[id].NotesPosition = "Left";
-        //    }
-        //    else
-        //    {
-        //        myNotesList.notes[id].NotesPosition = "Right";
-        //    }
-
-        //    id++;
-
-
-        //}
-        //if (Input.GetKeyDown(save))
-        //{
-
-        //    Array.Resize(ref myNotesList.notes,id);
-        //    myNotesList.totalNotes = id;
-        //    string jsondata = JsonUtility.ToJson(myNotesList);
-        //    Debug.Log(jsondata);
-
-        //    using StreamWriter writer = new StreamWriter(Application.dataPath + @"\MusicData\"+"B1W1.txt");
-        //    writer.Write(jsondata);
-
-        //}
-
     }
     public void OnNotesKey() {
         myNotesList.notes[id].id = id;

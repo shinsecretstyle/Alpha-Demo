@@ -55,6 +55,7 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for demo mode
         if (GameMode.Mode == "AttackOnly") {
 
             if (canBePressed) {
@@ -65,7 +66,6 @@ public class NoteObject : MonoBehaviour
                     {
                         AudioSource.PlayClipAtPoint(Perfect, MainCamera.position);
                         Scores.Point += 4;
-                        //Debug.Log("Perfect");
                         HK.result += 1;
                         Debug.Log("Perfect" + HK.result);
                         AttackMaker.TotalAttack += 1;
@@ -76,7 +76,6 @@ public class NoteObject : MonoBehaviour
                     else if (Goal < 30 && Goal >= 10)
                     {
                         AudioSource.PlayClipAtPoint(Good, MainCamera.position);
-                        //Debug.Log("Good");
                         Scores.Point += 2;
                         HK.result += 1;
                         Debug.Log("Good" + HK.result);
@@ -88,7 +87,6 @@ public class NoteObject : MonoBehaviour
                     else if (Goal < 10 && Goal >= 5)
                     {
                         AudioSource.PlayClipAtPoint(OK, MainCamera.position);
-                        //Debug.Log("ok");
                         Scores.Point += 1;
                         HK.result += 1;
                         Debug.Log("ok" + HK.result);
@@ -110,7 +108,6 @@ public class NoteObject : MonoBehaviour
                     }
                     Destroy(gameObject);
                 }
-                //Destroy(gameObject);
             }
         }
     }
