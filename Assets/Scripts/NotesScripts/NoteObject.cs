@@ -15,8 +15,6 @@ public class NoteObject : MonoBehaviour
     public bool canBePressed;
     public bool Pressed;
 
-    public KeyCode keyToPress;
-
     private AudioSource NotesSE;
     public AudioClip NotesAudioClip1;
 
@@ -32,6 +30,9 @@ public class NoteObject : MonoBehaviour
     public GameObject PerfectSE;
     public GameObject GoodSE;
     public GameObject OKSE;
+
+    float scrollSpeed;
+    GameObject notesMaker;
 
     Transform textpoint;
 
@@ -50,11 +51,19 @@ public class NoteObject : MonoBehaviour
         MainCamera = GameObject.Find("Main Camera").transform;
         textpoint = GameObject.Find("textpoint").transform;
         SEpoint = GameObject.Find("EndPoint").transform;
+
+        notesMaker = GameObject.Find("SmartNotesMaker");
+        scrollSpeed = notesMaker.GetComponent<SmartNotesMaker>().beatFallSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //move the notes
+        transform.position -= new Vector3(scrollSpeed * Time.deltaTime / 60f, 0f, 0f);
+
+
         //for demo mode
         if (GameMode.Mode == "AttackOnly") {
 
@@ -70,8 +79,7 @@ public class NoteObject : MonoBehaviour
                         Debug.Log("Perfect" + HK.result);
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
-                        Instantiate(Perfecttext, textpoint.transform);
-                        Instantiate(PerfectSE,SEpoint.transform);
+                        notesIsPerfect();
                     }
                     else if (Goal < 30 && Goal >= 10)
                     {
@@ -81,8 +89,7 @@ public class NoteObject : MonoBehaviour
                         Debug.Log("Good" + HK.result);
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
-                        Instantiate(Goodtext, textpoint.transform);
-                        Instantiate(GoodSE, SEpoint.transform);
+                        notesIsGood();
                     }
                     else if (Goal < 10 && Goal >= 5)
                     {
@@ -92,8 +99,7 @@ public class NoteObject : MonoBehaviour
                         Debug.Log("ok" + HK.result);
                         AttackMaker.TotalAttack += 1;
                         AttackMaker.SpecialAttack += 1;
-                        Instantiate(OKtext, textpoint.transform);
-                        Instantiate(OKSE, SEpoint.transform);
+                        notesIsOk();
                     }
                     else if (Goal < 5)
                     {
@@ -111,6 +117,28 @@ public class NoteObject : MonoBehaviour
             }
         }
     }
+
+    //note is press at the perfect time
+    void notesIsPerfect()
+    {
+        Instantiate(Perfecttext, textpoint.transform);
+        Instantiate(PerfectSE, SEpoint.transform);
+    }
+
+    //note is press at the good time
+    void notesIsGood()
+    {
+        Instantiate(Goodtext, textpoint.transform);
+        Instantiate(GoodSE, SEpoint.transform);
+    }
+
+    //note is press at the ok time
+    void notesIsOk()
+    {
+        Instantiate(OKtext, textpoint.transform);
+        Instantiate(OKSE, SEpoint.transform);
+    }
+
 
     private void OnNotesKey()
     {
@@ -179,11 +207,11 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "NotesLeft" && GetComponent<BeatScroller>().beatFallSpeed < 0)
+        if (other.tag == "NotesLeft" && scrollSpeed < 0)
         {
             canBePressed = true;
         }
-        if (other.tag == "NotesRight" && GetComponent<BeatScroller>().beatFallSpeed > 0)
+        if (other.tag == "NotesRight" && scrollSpeed > 0)
         {
             canBePressed = true;
         }
@@ -194,7 +222,7 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "NotesLeft" && GetComponent<BeatScroller>().beatFallSpeed < 0)
+        if (other.tag == "NotesLeft" && scrollSpeed < 0)
         {
             canBePressed = false;
             if (Pressed == false && GameMode.Mode != "AttackOnly")
@@ -202,11 +230,10 @@ public class NoteObject : MonoBehaviour
                 Scores.Point -= 1;
                 HK.result = 0;
                 Instantiate(Badtext, textpoint.transform);
-                //Debug.Log(AttackMaker.TotalAttack +"fffffffff");
             }
             Destroy(gameObject);
         }
-        if (other.tag == "NotesRight" && GetComponent<BeatScroller>().beatFallSpeed > 0)
+        if (other.tag == "NotesRight" && scrollSpeed > 0)
         {
             canBePressed = false;
             if (Pressed == false && GameMode.Mode != "AttackOnly")
@@ -214,7 +241,6 @@ public class NoteObject : MonoBehaviour
                 Scores.Point -= 1;
                 HK.result = 0;
                 Instantiate(Badtext, textpoint.transform);
-                //Debug.Log(AttackMaker.TotalAttack +"fffffffff");
             }
             Destroy(gameObject);
         }

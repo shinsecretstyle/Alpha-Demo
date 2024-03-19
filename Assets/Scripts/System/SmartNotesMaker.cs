@@ -154,7 +154,6 @@ public class SmartNotesMaker : MonoBehaviour
         {
             GameObject.Find("EnemyMaker").SetActive(false);
             gaming = false;
-            
         }
         if(gaming == false)
         {

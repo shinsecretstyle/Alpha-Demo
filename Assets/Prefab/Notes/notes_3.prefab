@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 156600877149495974}
   - component: {fileID: 156600877149495973}
   - component: {fileID: 156600877149495975}
-  - component: {fileID: 156600877149495972}
   - component: {fileID: 156600877149496024}
-  - component: {fileID: 1710438987754786147}
   - component: {fileID: -5163604809843786637}
   - component: {fileID: 2922717006116464398}
   m_Layer: 0
@@ -106,21 +104,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &156600877149495972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156600877149495971}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ebd69939cf01d740915b5745dedf117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultImage: {fileID: 21300000, guid: dd242334e1cedf3478264c06ee202f9f, type: 3}
-  PressedImage: {fileID: 21300000, guid: 3b3c868c29e47504a9084aa7db006042, type: 3}
-  keyToPress: 100
 --- !u!114 &156600877149496024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +120,6 @@ MonoBehaviour:
   PressedImage: {fileID: 21300000, guid: 3b3c868c29e47504a9084aa7db006042, type: 3}
   canBePressed: 0
   Pressed: 0
-  keyToPress: 100
   NotesAudioClip1: {fileID: 8300000, guid: 0bb6271dd023baf418d6ff9a7e3770e3, type: 3}
   Perfect: {fileID: 8300000, guid: abcb9ed7d2f5b3c4b8a339ad0c67c9ef, type: 3}
   Good: {fileID: 8300000, guid: ccf941ee15f73c74a89c09155b54b99f, type: 3}
@@ -149,20 +131,6 @@ MonoBehaviour:
   PerfectSE: {fileID: 8510774501656684859, guid: 4ef10221d016d79468f122452612ddf1, type: 3}
   GoodSE: {fileID: 8510774501656684859, guid: bf3b46e10f60b72469d736f29014b1fe, type: 3}
   OKSE: {fileID: 8510774501656684859, guid: 98739cfabb4ecac49ad67de49d0d3112, type: 3}
---- !u!114 &1710438987754786147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156600877149495971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f81541cd266553d43919b6c44e3c36cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beatFallSpeed: 0
-  isStarted: 0
 --- !u!82 &-5163604809843786637
 AudioSource:
   m_ObjectHideFlags: 0

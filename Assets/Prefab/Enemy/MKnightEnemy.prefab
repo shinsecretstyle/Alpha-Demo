@@ -186,8 +186,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3341170327586629055}
+  - component: {fileID: 8598662897499054998}
   - component: {fileID: 3341170327586628992}
-  - component: {fileID: 3341170327586628993}
   - component: {fileID: 3341170327586629054}
   - component: {fileID: 1081355817880547502}
   - component: {fileID: 5055891284289489084}
@@ -214,6 +214,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8598662897499054998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341170327586628994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd56d918923f57e4da0d6b20a151cbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: MKnight
+  MaxHp: 24
+  HP: 0
+  Speed: 70
+  ATK: 3
+  CD: 3
+  HpSlider: {fileID: 4380592300653638159}
+  hasSE: 1
+  DefaultImage: {fileID: 21300000, guid: 4209fd6d47f11f6428ed163980ea47bf, type: 3}
+  AttackedImage: {fileID: 21300000, guid: 874809f7081f1b345a6e8996d5244fdc, type: 3}
+  AttackSE1: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
 --- !u!212 &3341170327586628992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -266,36 +289,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3341170327586628993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3341170327586628994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942459be98112684fb37e01400269142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 0
-  Speed: 0
-  ATK: 0
-  HpSlider: {fileID: 4380592300653638159}
-  CanMove: 0
-  CanAttack: 0
-  CanAttackFence1: 0
-  CanAttackFence2: 0
-  CanAttackGate: 0
-  DefaultImage: {fileID: 21300000, guid: c6ae2a3a93892734cb3315f4b25c15d2, type: 3}
-  AttackedImage: {fileID: 21300000, guid: 874809f7081f1b345a6e8996d5244fdc, type: 3}
-  AttackCD: 0
-  Fence1CD: 0
-  Fence2CD: 0
-  AttackCDisOk: 0
-  Fence1CanAttack: 0
-  Fence2CanAttack: 0
-  AttackSE1: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
 --- !u!70 &3341170327586629054
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -439,7 +432,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6246523010204725050}
   - component: {fileID: 4380592300653638159}
-  - component: {fileID: 2666046734818082683}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -520,18 +512,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2666046734818082683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7271343275914346931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3945d12c3ac600b4a8533da98c3b3de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7424144861108521409
 GameObject:
   m_ObjectHideFlags: 0

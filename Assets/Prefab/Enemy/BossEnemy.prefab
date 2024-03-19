@@ -300,7 +300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8267366776521879309}
   - component: {fileID: 7143099453516979315}
-  - component: {fileID: 6669045857884545732}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -381,18 +380,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6669045857884545732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353382392162796005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3945d12c3ac600b4a8533da98c3b3de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7272089254227644926
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7272089254227644925}
-  - component: {fileID: 7272089254227644914}
+  - component: {fileID: -1610612717682570672}
   - component: {fileID: 7272089254227644924}
   - component: {fileID: 7272089254227644927}
   - component: {fileID: 7763384140370555245}
@@ -429,7 +416,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7272089254227644914
+--- !u!114 &-1610612717682570672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,26 +425,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7272089254227644926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3047714aa598c4483c0cc86ca8a3e0, type: 3}
+  m_Script: {fileID: 11500000, guid: cd56d918923f57e4da0d6b20a151cbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Boss
+  MaxHp: 1000
   HP: 0
-  Speed: 0
+  Speed: 40
+  ATK: 15
+  CD: 4
   HpSlider: {fileID: 7143099453516979315}
-  ATK: 0
-  CanMove: 0
-  CanAttack: 0
-  CanAttackFence1: 0
-  CanAttackFence2: 0
-  CanAttackGate: 0
-  DefaultImage: {fileID: 21300000, guid: 99ce1ce6dedc5464fbf034ebcdc8c4bc, type: 3}
-  AttackedImage: {fileID: 21300000, guid: bb4d685ee5a2a304ba8478ac9347ea49, type: 3}
-  AttackCD: 0
-  Fence1CD: 0
-  Fence2CD: 0
-  AttackCDisOk: 0
-  Fence1CanAttack: 0
-  Fence2CanAttack: 0
+  hasSE: 0
+  DefaultImage: {fileID: 0}
+  AttackedImage: {fileID: 0}
   AttackSE1: {fileID: 0}
 --- !u!212 &7272089254227644924
 SpriteRenderer:

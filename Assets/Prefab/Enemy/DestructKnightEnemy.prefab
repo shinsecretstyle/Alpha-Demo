@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4905751329528811256}
   - component: {fileID: 4905751329528811257}
-  - component: {fileID: 4905751329528811259}
+  - component: {fileID: 9202404773366058694}
   - component: {fileID: 4905751329528811258}
   - component: {fileID: 1551224974044258258}
   - component: {fileID: 2351935141852722404}
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4905751329528811259
+--- !u!114 &9202404773366058694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,26 +287,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4905751329528811262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9bdfa1c2c59a2443bbb72094a1cdc89, type: 3}
+  m_Script: {fileID: 11500000, guid: cd56d918923f57e4da0d6b20a151cbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: DestructKnight
+  MaxHp: 28
   HP: 0
-  Speed: 0
+  Speed: 60
+  ATK: 8
+  CD: 4
   HpSlider: {fileID: 5558137881793616664}
-  ATK: 0
-  CanMove: 0
-  CanAttack: 0
-  CanAttackFence1: 0
-  CanAttackFence2: 0
-  CanAttackGate: 0
-  DefaultImage: {fileID: 21300000, guid: c0f89a0a1646c8349a92278b610b55f2, type: 3}
-  AttackedImage: {fileID: 21300000, guid: 5001279662e93284ba9472d89c502332, type: 3}
-  AttackCD: 0
-  Fence1CD: 0
-  Fence2CD: 0
-  AttackCDisOk: 0
-  Fence1CanAttack: 0
-  Fence2CanAttack: 0
+  hasSE: 1
+  DefaultImage: {fileID: 0}
+  AttackedImage: {fileID: 0}
   AttackSE1: {fileID: 8300000, guid: 6eb72c75e0fcdc04b905b225912096e7, type: 3}
 --- !u!70 &4905751329528811258
 CapsuleCollider2D:
@@ -451,7 +444,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7316547498731993659}
   - component: {fileID: 5558137881793616664}
-  - component: {fileID: 2421506995476872546}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -532,18 +524,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2421506995476872546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8347807219326619254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3945d12c3ac600b4a8533da98c3b3de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9190493135637307720
 GameObject:
   m_ObjectHideFlags: 0
